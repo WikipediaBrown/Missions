@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "napkin",
+        "repositoryURL": "https://github.com/WikipediaBrown/napkin.git",
+        "state": {
+          "branch": "main",
+          "revision": "70104642d9b2b670d6aa20ee22702613c56fa573",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -3,19 +3,53 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		63A6A2B026A7C0180092612F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A2AF26A7C0180092612F /* AppDelegate.swift */; };
 		63A6A2B226A7C0180092612F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A2B126A7C0180092612F /* SceneDelegate.swift */; };
-		63A6A2B426A7C0180092612F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A2B326A7C0180092612F /* ViewController.swift */; };
-		63A6A2B726A7C0180092612F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63A6A2B526A7C0180092612F /* Main.storyboard */; };
 		63A6A2BA26A7C0180092612F /* Missions.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A2B826A7C0180092612F /* Missions.xcdatamodeld */; };
 		63A6A2BC26A7C0180092612F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63A6A2BB26A7C0180092612F /* Assets.xcassets */; };
 		63A6A2BF26A7C0180092612F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63A6A2BD26A7C0180092612F /* LaunchScreen.storyboard */; };
 		63A6A2CA26A7C0180092612F /* MissionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A2C926A7C0180092612F /* MissionsTests.swift */; };
 		63A6A2D526A7C0180092612F /* MissionsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A2D426A7C0180092612F /* MissionsUITests.swift */; };
+		63A6A2E426A7C0630092612F /* napkin in Frameworks */ = {isa = PBXBuildFile; productRef = 63A6A2E326A7C0630092612F /* napkin */; };
+		63A6A2E926A7D05E0092612F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A6A2E826A7D05E0092612F /* CloudKit.framework */; };
+		63A6A2EF26A7E3FF0092612F /* MissionListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A2EB26A7E3FF0092612F /* MissionListRouter.swift */; };
+		63A6A2F026A7E3FF0092612F /* MissionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A2EC26A7E3FF0092612F /* MissionListViewController.swift */; };
+		63A6A2F126A7E3FF0092612F /* MissionListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A2ED26A7E3FF0092612F /* MissionListBuilder.swift */; };
+		63A6A2F226A7E3FF0092612F /* MissionListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A2EE26A7E3FF0092612F /* MissionListInteractor.swift */; };
+		63A6A2F426A7E4A50092612F /* LaunchComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A2F326A7E4A50092612F /* LaunchComponent.swift */; };
+		63A6A2F826A7E5C80092612F /* MissionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A2F726A7E5C80092612F /* MissionListView.swift */; };
+		63A6A30026A7F34E0092612F /* AddMissionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A2FC26A7F34E0092612F /* AddMissionRouter.swift */; };
+		63A6A30126A7F34E0092612F /* AddMissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A2FD26A7F34E0092612F /* AddMissionViewController.swift */; };
+		63A6A30226A7F34E0092612F /* AddMissionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A2FE26A7F34E0092612F /* AddMissionBuilder.swift */; };
+		63A6A30326A7F34E0092612F /* AddMissionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A2FF26A7F34E0092612F /* AddMissionInteractor.swift */; };
+		63A6A30726A7FD830092612F /* SharedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A30626A7FD830092612F /* SharedViewController.swift */; };
+		63A6A30A26A801D10092612F /* AddMissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A30926A801D10092612F /* AddMissionView.swift */; };
+		63A6A30E26A8050E0092612F /* PresentationLifeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A30D26A8050E0092612F /* PresentationLifeCycle.swift */; };
+		7B93C327274F3B27005824FC /* MissionObjective+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93C323274F3B27005824FC /* MissionObjective+CoreDataClass.swift */; };
+		7B93C328274F3B27005824FC /* MissionObjective+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93C324274F3B27005824FC /* MissionObjective+CoreDataProperties.swift */; };
+		7B93C329274F3B27005824FC /* Mission+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93C325274F3B27005824FC /* Mission+CoreDataClass.swift */; };
+		7B93C32A274F3B27005824FC /* Mission+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93C326274F3B27005824FC /* Mission+CoreDataProperties.swift */; };
+		7B93C32D274F6390005824FC /* AddObjectiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93C32C274F6390005824FC /* AddObjectiveView.swift */; };
+		7B93C32F274F8B8E005824FC /* MissionObjective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93C32E274F8B8E005824FC /* MissionObjective.swift */; };
+		7B93C331274F8BBC005824FC /* Subtask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93C330274F8BBC005824FC /* Subtask.swift */; };
+		7B93C3332750462D005824FC /* ToggleListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93C3322750462D005824FC /* ToggleListItem.swift */; };
+		7BAC2ABB27486BA700C174BF /* MissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAC2ABA27486BA700C174BF /* MissionsManager.swift */; };
+		7BAC2ABF274875FD00C174BF /* MissionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAC2ABE274875FD00C174BF /* MissionState.swift */; };
+		7BAC2AC1274876E100C174BF /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAC2AC0274876E100C174BF /* Mission.swift */; };
+		7BAC2AC727487C2A00C174BF /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAC2AC627487C2A00C174BF /* DatabaseService.swift */; };
+		7BAC2ACA2748853F00C174BF /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAC2AC92748853F00C174BF /* NSManagedObject.swift */; };
+		7BAC2ACF274B1DD500C174BF /* MadeInCascadiaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAC2ACE274B1DD500C174BF /* MadeInCascadiaView.swift */; };
+		7BAC2AD1274B1E4D00C174BF /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAC2AD0274B1E4D00C174BF /* Image.swift */; };
+		7BAC2AD4274B20A800C174BF /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAC2AD3274B20A800C174BF /* ButtonModifier.swift */; };
+		7BAC2AD6274B2D0700C174BF /* MissionsPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAC2AD5274B2D0700C174BF /* MissionsPersistentContainer.swift */; };
+		7BAC2AD8274B7BC600C174BF /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAC2AD7274B7BC600C174BF /* Errors.swift */; };
+		7BAC2ADA274B7DEE00C174BF /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAC2AD9274B7DEE00C174BF /* ErrorHandling.swift */; };
+		7BAC2ADC274B905400C174BF /* MissionListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAC2ADB274B905400C174BF /* MissionListItemView.swift */; };
+		7BEA779A274BAB7600BF95CA /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA7799274BAB7600BF95CA /* MissionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +73,6 @@
 		63A6A2AC26A7C0180092612F /* Missions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Missions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63A6A2AF26A7C0180092612F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63A6A2B126A7C0180092612F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		63A6A2B326A7C0180092612F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		63A6A2B626A7C0180092612F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63A6A2B926A7C0180092612F /* Missions.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Missions.xcdatamodel; sourceTree = "<group>"; };
 		63A6A2BB26A7C0180092612F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63A6A2BE26A7C0180092612F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +83,42 @@
 		63A6A2D026A7C0180092612F /* MissionsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MissionsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63A6A2D426A7C0180092612F /* MissionsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionsUITests.swift; sourceTree = "<group>"; };
 		63A6A2D626A7C0180092612F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63A6A2E626A7CFBD0092612F /* Missions.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Missions.entitlements; sourceTree = "<group>"; };
+		63A6A2E826A7D05E0092612F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		63A6A2EB26A7E3FF0092612F /* MissionListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionListRouter.swift; sourceTree = "<group>"; };
+		63A6A2EC26A7E3FF0092612F /* MissionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionListViewController.swift; sourceTree = "<group>"; };
+		63A6A2ED26A7E3FF0092612F /* MissionListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionListBuilder.swift; sourceTree = "<group>"; };
+		63A6A2EE26A7E3FF0092612F /* MissionListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionListInteractor.swift; sourceTree = "<group>"; };
+		63A6A2F326A7E4A50092612F /* LaunchComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchComponent.swift; sourceTree = "<group>"; };
+		63A6A2F726A7E5C80092612F /* MissionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionListView.swift; sourceTree = "<group>"; };
+		63A6A2FC26A7F34E0092612F /* AddMissionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMissionRouter.swift; sourceTree = "<group>"; };
+		63A6A2FD26A7F34E0092612F /* AddMissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMissionViewController.swift; sourceTree = "<group>"; };
+		63A6A2FE26A7F34E0092612F /* AddMissionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMissionBuilder.swift; sourceTree = "<group>"; };
+		63A6A2FF26A7F34E0092612F /* AddMissionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMissionInteractor.swift; sourceTree = "<group>"; };
+		63A6A30626A7FD830092612F /* SharedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedViewController.swift; sourceTree = "<group>"; };
+		63A6A30926A801D10092612F /* AddMissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMissionView.swift; sourceTree = "<group>"; };
+		63A6A30D26A8050E0092612F /* PresentationLifeCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationLifeCycle.swift; sourceTree = "<group>"; };
+		7B93C323274F3B27005824FC /* MissionObjective+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MissionObjective+CoreDataClass.swift"; path = "Missions/Shared/Models/MissionObjective+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7B93C324274F3B27005824FC /* MissionObjective+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MissionObjective+CoreDataProperties.swift"; path = "Missions/Shared/Models/MissionObjective+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7B93C325274F3B27005824FC /* Mission+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Mission+CoreDataClass.swift"; path = "Missions/Shared/Models/Mission+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7B93C326274F3B27005824FC /* Mission+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Mission+CoreDataProperties.swift"; path = "Missions/Shared/Models/Mission+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7B93C32C274F6390005824FC /* AddObjectiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddObjectiveView.swift; sourceTree = "<group>"; };
+		7B93C32E274F8B8E005824FC /* MissionObjective.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionObjective.swift; sourceTree = "<group>"; };
+		7B93C330274F8BBC005824FC /* Subtask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subtask.swift; sourceTree = "<group>"; };
+		7B93C3322750462D005824FC /* ToggleListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleListItem.swift; sourceTree = "<group>"; };
+		7BAC2ABA27486BA700C174BF /* MissionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionsManager.swift; sourceTree = "<group>"; };
+		7BAC2ABE274875FD00C174BF /* MissionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionState.swift; sourceTree = "<group>"; };
+		7BAC2AC0274876E100C174BF /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
+		7BAC2AC627487C2A00C174BF /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		7BAC2AC92748853F00C174BF /* NSManagedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObject.swift; sourceTree = "<group>"; };
+		7BAC2ACE274B1DD500C174BF /* MadeInCascadiaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MadeInCascadiaView.swift; sourceTree = "<group>"; };
+		7BAC2AD0274B1E4D00C174BF /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		7BAC2AD3274B20A800C174BF /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
+		7BAC2AD5274B2D0700C174BF /* MissionsPersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionsPersistentContainer.swift; sourceTree = "<group>"; };
+		7BAC2AD7274B7BC600C174BF /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		7BAC2AD9274B7DEE00C174BF /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
+		7BAC2ADB274B905400C174BF /* MissionListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionListItemView.swift; sourceTree = "<group>"; };
+		7BEA7799274BAB7600BF95CA /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +126,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63A6A2E426A7C0630092612F /* napkin in Frameworks */,
+				63A6A2E926A7D05E0092612F /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,10 +151,15 @@
 		63A6A2A326A7C0180092612F = {
 			isa = PBXGroup;
 			children = (
+				7B93C323274F3B27005824FC /* MissionObjective+CoreDataClass.swift */,
+				7B93C324274F3B27005824FC /* MissionObjective+CoreDataProperties.swift */,
+				7B93C325274F3B27005824FC /* Mission+CoreDataClass.swift */,
+				7B93C326274F3B27005824FC /* Mission+CoreDataProperties.swift */,
 				63A6A2AE26A7C0180092612F /* Missions */,
 				63A6A2C826A7C0180092612F /* MissionsTests */,
 				63A6A2D326A7C0180092612F /* MissionsUITests */,
 				63A6A2AD26A7C0180092612F /* Products */,
+				63A6A2E726A7D05E0092612F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,13 +176,14 @@
 		63A6A2AE26A7C0180092612F /* Missions */ = {
 			isa = PBXGroup;
 			children = (
-				63A6A2AF26A7C0180092612F /* AppDelegate.swift */,
-				63A6A2B126A7C0180092612F /* SceneDelegate.swift */,
-				63A6A2B326A7C0180092612F /* ViewController.swift */,
-				63A6A2B526A7C0180092612F /* Main.storyboard */,
+				7BAC2ABC27486BAD00C174BF /* Shared */,
+				63A6A2F526A7E5740092612F /* App Start */,
+				63A6A2EA26A7E3E80092612F /* Mission List */,
+				63A6A2FB26A7F3320092612F /* Add Mission */,
 				63A6A2BB26A7C0180092612F /* Assets.xcassets */,
 				63A6A2BD26A7C0180092612F /* LaunchScreen.storyboard */,
 				63A6A2C026A7C0180092612F /* Info.plist */,
+				63A6A2E626A7CFBD0092612F /* Missions.entitlements */,
 				63A6A2B826A7C0180092612F /* Missions.xcdatamodeld */,
 			);
 			path = Missions;
@@ -131,6 +207,114 @@
 			path = MissionsUITests;
 			sourceTree = "<group>";
 		};
+		63A6A2E726A7D05E0092612F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63A6A2E826A7D05E0092612F /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		63A6A2EA26A7E3E80092612F /* Mission List */ = {
+			isa = PBXGroup;
+			children = (
+				63A6A2F626A7E5A30092612F /* Views */,
+				63A6A2ED26A7E3FF0092612F /* MissionListBuilder.swift */,
+				63A6A2EE26A7E3FF0092612F /* MissionListInteractor.swift */,
+				63A6A2EB26A7E3FF0092612F /* MissionListRouter.swift */,
+				63A6A2EC26A7E3FF0092612F /* MissionListViewController.swift */,
+			);
+			path = "Mission List";
+			sourceTree = "<group>";
+		};
+		63A6A2F526A7E5740092612F /* App Start */ = {
+			isa = PBXGroup;
+			children = (
+				63A6A2AF26A7C0180092612F /* AppDelegate.swift */,
+				63A6A2F326A7E4A50092612F /* LaunchComponent.swift */,
+				63A6A2B126A7C0180092612F /* SceneDelegate.swift */,
+				63A6A30626A7FD830092612F /* SharedViewController.swift */,
+				63A6A30D26A8050E0092612F /* PresentationLifeCycle.swift */,
+			);
+			path = "App Start";
+			sourceTree = "<group>";
+		};
+		63A6A2F626A7E5A30092612F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				63A6A2F726A7E5C80092612F /* MissionListView.swift */,
+				7BAC2ADB274B905400C174BF /* MissionListItemView.swift */,
+				7BEA7799274BAB7600BF95CA /* MissionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		63A6A2FB26A7F3320092612F /* Add Mission */ = {
+			isa = PBXGroup;
+			children = (
+				63A6A30826A801BE0092612F /* Views */,
+				63A6A2FE26A7F34E0092612F /* AddMissionBuilder.swift */,
+				63A6A2FF26A7F34E0092612F /* AddMissionInteractor.swift */,
+				63A6A2FC26A7F34E0092612F /* AddMissionRouter.swift */,
+				63A6A2FD26A7F34E0092612F /* AddMissionViewController.swift */,
+			);
+			path = "Add Mission";
+			sourceTree = "<group>";
+		};
+		63A6A30826A801BE0092612F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				63A6A30926A801D10092612F /* AddMissionView.swift */,
+				7B93C32C274F6390005824FC /* AddObjectiveView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7BAC2ABC27486BAD00C174BF /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				7BAC2ACD274B1DCC00C174BF /* Views */,
+				7BAC2ABD274875ED00C174BF /* Models */,
+				7BAC2AC82748853100C174BF /* Extensions */,
+				7BAC2ABA27486BA700C174BF /* MissionsManager.swift */,
+				7BAC2AC627487C2A00C174BF /* DatabaseService.swift */,
+				7BAC2AD5274B2D0700C174BF /* MissionsPersistentContainer.swift */,
+				7BAC2AD9274B7DEE00C174BF /* ErrorHandling.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		7BAC2ABD274875ED00C174BF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7BAC2AC0274876E100C174BF /* Mission.swift */,
+				7B93C32E274F8B8E005824FC /* MissionObjective.swift */,
+				7B93C330274F8BBC005824FC /* Subtask.swift */,
+				7BAC2ABE274875FD00C174BF /* MissionState.swift */,
+				7BAC2AD7274B7BC600C174BF /* Errors.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7BAC2AC82748853100C174BF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7BAC2AD0274B1E4D00C174BF /* Image.swift */,
+				7BAC2AC92748853F00C174BF /* NSManagedObject.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7BAC2ACD274B1DCC00C174BF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7BAC2ACE274B1DD500C174BF /* MadeInCascadiaView.swift */,
+				7BAC2AD3274B20A800C174BF /* ButtonModifier.swift */,
+				7B93C3322750462D005824FC /* ToggleListItem.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,6 +331,9 @@
 			dependencies = (
 			);
 			name = Missions;
+			packageProductDependencies = (
+				63A6A2E326A7C0630092612F /* napkin */,
+			);
 			productName = Missions;
 			productReference = 63A6A2AC26A7C0180092612F /* Missions.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +405,9 @@
 				Base,
 			);
 			mainGroup = 63A6A2A326A7C0180092612F;
+			packageReferences = (
+				63A6A2E226A7C0630092612F /* XCRemoteSwiftPackageReference "napkin" */,
+			);
 			productRefGroup = 63A6A2AD26A7C0180092612F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -236,7 +426,6 @@
 			files = (
 				63A6A2BF26A7C0180092612F /* LaunchScreen.storyboard in Resources */,
 				63A6A2BC26A7C0180092612F /* Assets.xcassets in Resources */,
-				63A6A2B726A7C0180092612F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +450,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63A6A2B426A7C0180092612F /* ViewController.swift in Sources */,
+				7B93C32D274F6390005824FC /* AddObjectiveView.swift in Sources */,
+				7B93C331274F8BBC005824FC /* Subtask.swift in Sources */,
+				7BAC2ABB27486BA700C174BF /* MissionsManager.swift in Sources */,
+				7BAC2AD1274B1E4D00C174BF /* Image.swift in Sources */,
 				63A6A2B026A7C0180092612F /* AppDelegate.swift in Sources */,
+				7BAC2ACF274B1DD500C174BF /* MadeInCascadiaView.swift in Sources */,
+				7BAC2ADC274B905400C174BF /* MissionListItemView.swift in Sources */,
+				63A6A2EF26A7E3FF0092612F /* MissionListRouter.swift in Sources */,
 				63A6A2BA26A7C0180092612F /* Missions.xcdatamodeld in Sources */,
+				63A6A30326A7F34E0092612F /* AddMissionInteractor.swift in Sources */,
+				7BAC2AD8274B7BC600C174BF /* Errors.swift in Sources */,
+				7B93C328274F3B27005824FC /* MissionObjective+CoreDataProperties.swift in Sources */,
+				7BAC2ADA274B7DEE00C174BF /* ErrorHandling.swift in Sources */,
+				63A6A30A26A801D10092612F /* AddMissionView.swift in Sources */,
+				63A6A2F126A7E3FF0092612F /* MissionListBuilder.swift in Sources */,
 				63A6A2B226A7C0180092612F /* SceneDelegate.swift in Sources */,
+				63A6A30026A7F34E0092612F /* AddMissionRouter.swift in Sources */,
+				7B93C3332750462D005824FC /* ToggleListItem.swift in Sources */,
+				7B93C32F274F8B8E005824FC /* MissionObjective.swift in Sources */,
+				63A6A30126A7F34E0092612F /* AddMissionViewController.swift in Sources */,
+				63A6A30726A7FD830092612F /* SharedViewController.swift in Sources */,
+				7BAC2AD4274B20A800C174BF /* ButtonModifier.swift in Sources */,
+				63A6A2F026A7E3FF0092612F /* MissionListViewController.swift in Sources */,
+				63A6A2F426A7E4A50092612F /* LaunchComponent.swift in Sources */,
+				63A6A30226A7F34E0092612F /* AddMissionBuilder.swift in Sources */,
+				7BAC2AC727487C2A00C174BF /* DatabaseService.swift in Sources */,
+				7BAC2AD6274B2D0700C174BF /* MissionsPersistentContainer.swift in Sources */,
+				63A6A30E26A8050E0092612F /* PresentationLifeCycle.swift in Sources */,
+				7BEA779A274BAB7600BF95CA /* MissionView.swift in Sources */,
+				7B93C327274F3B27005824FC /* MissionObjective+CoreDataClass.swift in Sources */,
+				7B93C32A274F3B27005824FC /* Mission+CoreDataProperties.swift in Sources */,
+				63A6A2F226A7E3FF0092612F /* MissionListInteractor.swift in Sources */,
+				7BAC2ABF274875FD00C174BF /* MissionState.swift in Sources */,
+				7B93C329274F3B27005824FC /* Mission+CoreDataClass.swift in Sources */,
+				7BAC2ACA2748853F00C174BF /* NSManagedObject.swift in Sources */,
+				7BAC2AC1274876E100C174BF /* Mission.swift in Sources */,
+				63A6A2F826A7E5C80092612F /* MissionListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,14 +522,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		63A6A2B526A7C0180092612F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				63A6A2B626A7C0180092612F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		63A6A2BD26A7C0180092612F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -440,9 +654,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Missions/Missions.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4AM5US9G8B;
 				INFOPLIST_FILE = Missions/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,9 +675,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Missions/Missions.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4AM5US9G8B;
 				INFOPLIST_FILE = Missions/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -597,6 +815,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		63A6A2E226A7C0630092612F /* XCRemoteSwiftPackageReference "napkin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WikipediaBrown/napkin.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		63A6A2E326A7C0630092612F /* napkin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63A6A2E226A7C0630092612F /* XCRemoteSwiftPackageReference "napkin" */;
+			productName = napkin;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		63A6A2B826A7C0180092612F /* Missions.xcdatamodeld */ = {
