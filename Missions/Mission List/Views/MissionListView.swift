@@ -10,7 +10,7 @@ import SwiftUI
 
 struct MissionListView: View {
         
-    @ObservedObject var viewModel: ViewModel = ViewModel()
+    @StateObject var viewModel: ViewModel = ViewModel()
     class ViewModel: ObservableObject {
         @Published var currentMissions: [Mission] = []
         @Published var backlogMissions: [Mission] = []

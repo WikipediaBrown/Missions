@@ -14,11 +14,12 @@ class Mission: NSManagedObject, Identifiable {
     
     // MARK: - Properties
     
-    @NSManaged var name: String
+    @NSManaged var title: String
+    @NSManaged var summary: String
     @NSManaged var creationDate: Date
     @NSManaged var imageData: Data
     @NSManaged var lastUpdatedDate: Date
     @NSManaged var missionState: MissionState
     @NSManaged var uuid: UUID
-    @NSManaged var objectives: NSSet
+    @NSManaged var objectives: Set<MissionObjective>
 }

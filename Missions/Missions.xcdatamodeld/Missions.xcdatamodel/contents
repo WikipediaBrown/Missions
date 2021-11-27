@@ -5,7 +5,8 @@
         <attribute name="imageData" optional="YES" attributeType="Binary"/>
         <attribute name="lastUpdatedDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="missionState" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="summary" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="objectives" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MissionObjective" inverseName="mission" inverseEntity="MissionObjective"/>
         <uniquenessConstraints>
@@ -17,7 +18,7 @@
     <entity name="MissionObjective" representedClassName="MissionObjective" syncable="YES">
         <attribute name="content" optional="YES" attributeType="String"/>
         <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="priority" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="scheduledDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="mission" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Mission" inverseName="objectives" inverseEntity="Mission"/>
         <relationship name="subtasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Subtask" inverseName="objective" inverseEntity="Subtask"/>
@@ -29,11 +30,17 @@
     </entity>
     <entity name="Subtask" representedClassName="Subtask" syncable="YES">
         <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="objective" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MissionObjective" inverseName="subtasks" inverseEntity="MissionObjective"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="uuid"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="Mission" positionX="-63" positionY="-18" width="128" height="134"/>
+        <element name="Mission" positionX="-63" positionY="-18" width="128" height="149"/>
         <element name="MissionObjective" positionX="-54" positionY="45" width="128" height="119"/>
-        <element name="Subtask" positionX="-63" positionY="63" width="128" height="59"/>
+        <element name="Subtask" positionX="-63" positionY="63" width="128" height="74"/>
     </elements>
 </model>

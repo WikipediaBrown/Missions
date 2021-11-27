@@ -46,9 +46,9 @@ final class AddMissionInteractor: PresentableInteractor<AddMissionPresentable>, 
         // TODO: Pause any business logic.
     }
     
-    func onAddMission(name: String) {
+    func onAddMission(title: String, summary: String, objectives: [AddObjectiveView.ViewModel]) {
         do {
-            try missionManager.create(name: name)
+            try missionManager.create(title: title, summary: summary, objectives: objectives)
             listener?.endAddMission()
         } catch let error {
             presenter.presentError(error: error)

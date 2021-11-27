@@ -17,10 +17,18 @@ struct MissionView: View {
         List {
             Section(
                 content: {
-                    TextField("Mission Name", text: $mission.name, prompt: Text("Enter mission name..."))
+                    TextField("Mission Name", text: $mission.title, prompt: Text("Enter mission name..."))
                 },
                 header: {
                     Text("Mission Name")
+                }
+            )
+            Section(
+                content: {
+                    TextEditor(text: $mission.summary)
+                },
+                header: {
+                    Text("Mission Summary")
                 }
             )
             Section(
@@ -47,6 +55,37 @@ struct MissionView: View {
                 },
                 footer: {
                     Text("Mission Name")
+                }
+            )
+            Section(
+                content: {
+//                    ForEach(
+//                        mission.subtasks.indices,
+//                        id: \.self,
+//                        content: { index in
+//                            TextField("", text: $mission.subtasks[index].text, prompt: Text("Enter subtask dude"))
+//                        }
+//                    )
+//                        .onDelete { mission.subtasks.remove(atOffsets: $0) }
+                        
+//                    Button(
+//                        action: {
+//                            if viewModel.subtasks.last != "" {
+//                                withAnimation {
+//                                    viewModel.subtasks.append("")
+//                                }
+//                            }
+//                        },
+//                        label: {
+//                            Label("Add a Subtask", systemImage: "plus.square.on.square")
+//                        }
+//                    )
+                },
+                header: {
+                    Label("Objective Subtasks", systemImage: "list.dash")
+                },
+                footer: {
+                    Text("Add some subtasks if you need more direction...")
                 }
             )
             Section {
@@ -76,7 +115,7 @@ struct MissionView: View {
         }
         .listStyle(InsetGroupedListStyle())
         .navigationBarTitleDisplayMode(.large)
-        .navigationTitle(Text(mission.name))
+        .navigationTitle(Text(mission.title))
     }
     
     // MARK: - Taps

@@ -13,7 +13,7 @@ protocol AddMissionPresentableListener: AnyObject {
     // TODO: Declare properties and methods that the view controller can invoke to perform
     // business logic, such as signIn(). This protocol is implemented by the corresponding
     // interactor class.
-    func onAddMission(name: String)
+    func onAddMission(title: String, summary: String, objectives: [AddObjectiveView.ViewModel])
     func onDismissAddMission()
 }
 
@@ -32,7 +32,7 @@ final class AddMissionViewController: UIHostingController<AddMissionView>, AddMi
             .tapSubject
             .sink { [weak self] tap in
                 switch tap {
-                case .addMission(let name): self?.listener?.onAddMission(name: name)
+                case .addMission(let title, let summary, let objectives): self?.listener?.onAddMission(title: title, summary: summary, objectives: objectives)
                 case .dismiss: self?.listener?.onDismissAddMission()
                 }
             }

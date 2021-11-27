@@ -12,5 +12,7 @@ class Subtask: NSManagedObject, Identifiable {
 
     //  MARK: - Properties
     
+    @NSManaged var missionObjective: MissionObjective?
     @NSManaged var text: String
+    @NSManaged var uuid: UUID
 }

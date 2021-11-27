@@ -49,7 +49,7 @@ struct ToggleListItem: View {
                 )
                     .padding()
                 Spacer()
-                Toggle(toggleMessage, isOn: toggleIsOn)
+                Toggle(toggleMessage, isOn: toggleIsOn.animation(.spring()))
                     .padding()
             }
         )

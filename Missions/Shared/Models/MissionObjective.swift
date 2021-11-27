@@ -14,7 +14,8 @@ class MissionObjective: NSManagedObject, Identifiable {
 
     @NSManaged var content: String
     @NSManaged var creationDate: Date
+    @NSManaged var scheduledDate: Date
     @NSManaged var uuid: UUID
     @NSManaged var mission: Mission?
-    @NSManaged var objectives: NSSet
+    @NSManaged var subtasks: Set<Subtask>
 }

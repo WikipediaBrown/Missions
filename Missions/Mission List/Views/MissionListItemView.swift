@@ -26,7 +26,7 @@ struct MissionListItemView: View {
                     content: {
                         Label(
                             title: {
-                                Text(mission.name)
+                                Text(mission.title)
                                     .font(.subheadline)
                                     .fontWeight(.black)
                             },

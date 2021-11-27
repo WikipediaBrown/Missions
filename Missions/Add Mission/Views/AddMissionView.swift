@@ -10,11 +10,12 @@ import SwiftUI
 
 struct AddMissionView: View {
             
-    @ObservedObject var viewModel: ViewModel = ViewModel()
+    @StateObject var viewModel: ViewModel = ViewModel()
     class ViewModel: ObservableObject {
-        @Published var name = ""
+        @Published var title = ""
+        @Published var summary = ""
         @Published var showAddObjectiveView = false
-        @Published var currentMissions: [AddObjectiveView.ViewModel] = []
+        @Published var currentObjectives: [AddObjectiveView.ViewModel] = []
     }
 
     var body: some View {
@@ -22,7 +23,7 @@ struct AddMissionView: View {
             Form {
                 Section(
                     content: {
-                        TextField("Mission Name", text: $viewModel.name, prompt: Text("Enter mission name..."))
+                        TextField("Mission Name", text: $viewModel.title, prompt: Text("Enter mission name..."))
                     },
                     header: {
                         Text("Mission Name")
@@ -35,6 +36,26 @@ struct AddMissionView: View {
                 )
                 Section(
                     content: {
+                        TextEditor(text: $viewModel.summary)
+                    },
+                    header: {
+                        Text("Mission Summary")
+                    },
+                    footer: {
+                        Text("Write down the rundown. If you want...")
+                            .font(.caption2)
+                            .foregroundColor(.secondary)
+                    }
+                )
+                Section(
+                    content: {
+                        ForEach(
+                            $viewModel.currentObjectives,
+                            content: { objective in
+                                Text(objective.title.wrappedValue)
+                            }
+                        )
+                            .onDelete { viewModel.currentObjectives.remove(atOffsets: $0) }
                         Button(
                             action: {
                                 viewModel.showAddObjectiveView.toggle()
@@ -51,7 +72,6 @@ struct AddMissionView: View {
                                 AddObjectiveView()
                             }
                         )
-                        
                     },
                     header: {
                         Text("Mission Objectives")
@@ -66,7 +86,10 @@ struct AddMissionView: View {
                     content: {
                         Button(
                             action: {
-                                tapSubject.send(.addMission(name: viewModel.name))
+                                tapSubject.send(.addMission(name: viewModel.title,
+                                                            summary: viewModel.summary,
+                                                            objectives: viewModel.currentObjectives)
+                                )
                             },
                             label:   {
                                 Label("Save Mission", systemImage: "square.and.arrow.down")
@@ -92,7 +115,7 @@ struct AddMissionView: View {
     let tapSubject: PassthroughSubject<Taps, Never> = PassthroughSubject()
 
     enum Taps {
-        case addMission(name: String)
+        case addMission(name: String, summary: String, objectives: [AddObjectiveView.ViewModel])
         case dismiss
     }
     

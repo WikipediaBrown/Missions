@@ -12,22 +12,26 @@ import SwiftUI
 
 struct AddObjectiveView: View {
     
-    @State var summary = ""
-    @State var date = Date()
-    @State var subtasks: [String]  = []
-    @State var showCalendar = false
+    @EnvironmentObject var addMissionViewModel: AddMissionView.ViewModel
+    @Environment(\.presentationMode) var presentationMode
 
+    @StateObject var viewModel: ViewModel = ViewModel()
+    class ViewModel: ObservableObject, Identifiable {
+        @Published var title = ""
+        @Published var date = Date()
+        @Published var subtasks: [String]  = []
+        @Published var showCalendar = false
+    }
     
     var body: some View {
         NavigationView {
             Form {
                 Section(
                     content: {
-                        TextEditor(text: $summary)
-                            .frame(height: 128)
+                        TextField("", text: $viewModel.title, prompt: Text("What's the objective Boss?"))
                     },
                     header: {
-                        Text("Objective Summary")
+                        Label("Objective Summary", systemImage: "note.text.badge.plus")
                     }
                 )
                 Section(
@@ -35,12 +39,12 @@ struct AddObjectiveView: View {
                         ToggleListItem(title: "Date",
                                        subtitle: "Today",
                                        imageName: "calendar",
-                                       toggleIsOn: $showCalendar
+                                       toggleIsOn: $viewModel.showCalendar.animation()
                         )
-                        if showCalendar {
+                        if viewModel.showCalendar {
                             DatePicker(
                                     "Start Date",
-                                    selection: $date,
+                                    selection: $viewModel.date,
                                     displayedComponents: [.date]
                                 )
                                 .datePickerStyle(.graphical)
@@ -53,20 +57,20 @@ struct AddObjectiveView: View {
                 Section(
                     content: {
                         ForEach(
-                            subtasks.indices,
+                            viewModel.subtasks.indices,
                             id: \.self,
                             content: { index in
-                                TextField("", text: $subtasks[index], prompt: Text("Enter a subtask my dude"))
-                                
+                                TextField("", text: $viewModel.subtasks[index], prompt: Text("Enter subtask dude"))
                             }
                         )
-                            .onDelete { indexSet in
-                                subtasks.remove(atOffsets: indexSet)
-                            }
+                            .onDelete { viewModel.subtasks.remove(atOffsets: $0) }
+                            
                         Button(
                             action: {
-                                if subtasks.last != "" {
-                                    subtasks.append("")
+                                if viewModel.subtasks.last != "" {
+                                    withAnimation {
+                                        viewModel.subtasks.append("")
+                                    }
                                 }
                             },
                             label: {
@@ -75,7 +79,7 @@ struct AddObjectiveView: View {
                         )
                     },
                     header: {
-                        Text("Objective Subtasks")
+                        Label("Objective Subtasks", systemImage: "list.dash")
                     },
                     footer: {
                         Text("Add some subtasks if you need more direction...")
@@ -85,7 +89,9 @@ struct AddObjectiveView: View {
                     content: {
                         Button(
                             action: {
-
+                                viewModel.subtasks = viewModel.subtasks.filter { $0.isEmpty }
+                                addMissionViewModel.currentObjectives.append(viewModel)
+                                presentationMode.wrappedValue.dismiss()
                             },
                             label:   {
                                 Label("Save Objective", systemImage: "square.and.arrow.down")

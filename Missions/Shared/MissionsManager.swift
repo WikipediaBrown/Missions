@@ -14,7 +14,7 @@ import CoreData
 protocol MissionsManaging {
     var missionPublishers: [MissionState: AnyPublisher<[Mission], Error>] { get }
     
-    func create(name: String) throws
+    func create(title: String, summary: String, objectives: [AddObjectiveView.ViewModel]) throws
     func read(uuid: UUID) -> AnyPublisher<Mission, Error>
     func update() throws
     func delete(uuid: UUID) -> AnyPublisher<(), Error>
@@ -53,12 +53,15 @@ class MissionsManager: MissionsManaging {
     
     // MARK: - Public Methods
     
-    func create(name: String) throws {
+    func create(title: String, summary: String, objectives: [AddObjectiveView.ViewModel]) throws {
         guard let entity = NSEntityDescription.entity(forEntityName: Mission.typeName, in: databaseService.context)
         else { throw CoreDataError.entityDescriptionError }
     
         let mission = Mission.init(entity: entity, insertInto: databaseService.context)
-        mission.name = name
+        mission.title = title
+        mission.summary = summary
+        mission.objectives = toObjectives(mission: mission, objectives: objectives)
+
         mission.uuid = UUID()
         mission.creationDate = Date()
         mission.lastUpdatedDate = Date()
@@ -88,7 +91,43 @@ class MissionsManager: MissionsManaging {
             }
             .eraseToAnyPublisher()
     }
+    
+    
+    // MARK: - Private Methods
 
+    private func toObjectives(mission: Mission, objectives: [AddObjectiveView.ViewModel]) -> Set<MissionObjective> {
+        let models = objectives.compactMap { viewModel -> MissionObjective? in
+            guard let entity = NSEntityDescription.entity(forEntityName: MissionObjective.typeName, in: databaseService.context)
+            else { return nil }
+            
+            let objective = MissionObjective(entity: entity, insertInto: databaseService.context)
+            objective.content = viewModel.title
+            objective.subtasks = toSubtasks(objective: objective, subtasks: viewModel.subtasks)
+            objective.creationDate = Date()
+            objective.scheduledDate = viewModel.date
+            objective.scheduledDate = viewModel.date
+            objective.mission = mission
+            objective.uuid = UUID()
+            return objective
+        }
+        return Set(models)
+    }
+    
+    private func toSubtasks(objective: MissionObjective, subtasks: [String]) -> Set<Subtask> {
+        let models = subtasks.compactMap { string -> Subtask? in
+            guard let entity = NSEntityDescription.entity(forEntityName: Subtask.typeName, in: databaseService.context)
+            else { return nil }
+            
+            let subtask = Subtask(entity: entity, insertInto: databaseService.context)
+            subtask.text = string
+            subtask.missionObjective = objective
+            subtask.uuid = UUID()
+            return subtask
+        }
+        return Set(models)
+    }
+
+    
     // MARK: - Static Methods
     
     static func missionsRequest(predicate: NSPredicate? = nil) -> NSFetchRequest<NSFetchRequestResult> {
