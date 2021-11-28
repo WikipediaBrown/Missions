@@ -92,4 +92,5 @@ extension DatabaseService: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         subjectDictionary[controller]?.send(controller.fetchedObjects ?? [])
     }
+    
 }

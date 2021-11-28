@@ -10,13 +10,14 @@ import SwiftUI
 
 struct AddMissionView: View {
             
-    @StateObject var viewModel: ViewModel = ViewModel()
+    @ObservedObject var viewModel: ViewModel = ViewModel()
     class ViewModel: ObservableObject {
         @Published var title = ""
         @Published var summary = ""
-        @Published var showAddObjectiveView = false
         @Published var currentObjectives: [AddObjectiveView.ViewModel] = []
     }
+
+    @State var showAddObjectiveView = false
 
     var body: some View {
         NavigationView {
@@ -58,7 +59,7 @@ struct AddMissionView: View {
                             .onDelete { viewModel.currentObjectives.remove(atOffsets: $0) }
                         Button(
                             action: {
-                                viewModel.showAddObjectiveView.toggle()
+                                showAddObjectiveView.toggle()
                             },
                             label:   {
                                 Label("Add Objective", systemImage: "list.dash")
@@ -66,7 +67,7 @@ struct AddMissionView: View {
                         )
                         .buttonStyle(ButtonModifier(color: .indigo))
                         .sheet(
-                            isPresented: $viewModel.showAddObjectiveView,
+                            isPresented: $showAddObjectiveView,
                             onDismiss: {},
                             content: {
                                 AddObjectiveView()

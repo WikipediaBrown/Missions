@@ -9,8 +9,8 @@ import SwiftUI
 
 struct MissionListItemView: View {
     
+    @ObservedObject var mission: Mission
     
-    @State var mission: Mission
     var body: some View {
         HStack(
             alignment: .center,

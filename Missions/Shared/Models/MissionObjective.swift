@@ -17,5 +17,5 @@ class MissionObjective: NSManagedObject, Identifiable {
     @NSManaged var scheduledDate: Date
     @NSManaged var uuid: UUID
     @NSManaged var mission: Mission?
-    @NSManaged var subtasks: Set<Subtask>
+    @NSManaged var subtasks: NSMutableOrderedSet
 }

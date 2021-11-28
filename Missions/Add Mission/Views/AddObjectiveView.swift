@@ -15,14 +15,15 @@ struct AddObjectiveView: View {
     @EnvironmentObject var addMissionViewModel: AddMissionView.ViewModel
     @Environment(\.presentationMode) var presentationMode
 
-    @StateObject var viewModel: ViewModel = ViewModel()
+    @ObservedObject var viewModel: ViewModel = ViewModel()
     class ViewModel: ObservableObject, Identifiable {
         @Published var title = ""
         @Published var date = Date()
         @Published var subtasks: [String]  = []
-        @Published var showCalendar = false
     }
     
+    @State var showCalendar = false
+
     var body: some View {
         NavigationView {
             Form {
@@ -31,7 +32,7 @@ struct AddObjectiveView: View {
                         TextField("", text: $viewModel.title, prompt: Text("What's the objective Boss?"))
                     },
                     header: {
-                        Label("Objective Summary", systemImage: "note.text.badge.plus")
+                        Label("Objective Title", systemImage: "note.text.badge.plus")
                     }
                 )
                 Section(
@@ -39,9 +40,9 @@ struct AddObjectiveView: View {
                         ToggleListItem(title: "Date",
                                        subtitle: "Today",
                                        imageName: "calendar",
-                                       toggleIsOn: $viewModel.showCalendar.animation()
+                                       toggleIsOn: $showCalendar.animation()
                         )
-                        if viewModel.showCalendar {
+                        if showCalendar {
                             DatePicker(
                                     "Start Date",
                                     selection: $viewModel.date,
@@ -89,7 +90,7 @@ struct AddObjectiveView: View {
                     content: {
                         Button(
                             action: {
-                                viewModel.subtasks = viewModel.subtasks.filter { $0.isEmpty }
+                                viewModel.subtasks = viewModel.subtasks.filter { !$0.isEmpty }
                                 addMissionViewModel.currentObjectives.append(viewModel)
                                 presentationMode.wrappedValue.dismiss()
                             },

@@ -40,6 +40,22 @@ final class MissionListInteractor: PresentableInteractor<MissionListPresentable>
         super.init(presenter: presenter)
         presenter.listener = self
         
+        self.setupMissionLists(missionManager: missionManager)
+    }
+
+    override func didBecomeActive() {
+        super.didBecomeActive()
+        // TODO: Implement business logic here.
+    }
+
+    override func willResignActive() {
+        super.willResignActive()
+        // TODO: Pause any business logic.
+    }
+    
+    // MARK: - Private Methods
+    
+    private func setupMissionLists(missionManager: MissionsManaging) {
         missionManager
             .missionPublishers[.current]?
             .catch { [weak self] error -> Just<[Mission]> in
@@ -85,16 +101,6 @@ final class MissionListInteractor: PresentableInteractor<MissionListPresentable>
             .subscribe(presenter.removedMissions)
             .store(in: &cancellables)
     }
-
-    override func didBecomeActive() {
-        super.didBecomeActive()
-        // TODO: Implement business logic here.
-    }
-
-    override func willResignActive() {
-        super.willResignActive()
-        // TODO: Pause any business logic.
-    }
 }
 
 extension MissionListInteractor: AddMissionListener {
@@ -109,7 +115,35 @@ extension MissionListInteractor: MissionListPresentableListener {
     }
     
     func onDeleteMission(uuid: UUID) {
-        missionManager.delete(uuid: uuid)
+        missionManager.deleteMission(uuid: uuid)
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .failure(let error): self.presenter.presentError(error: error)
+                    case .finished: break
+                    }
+                },
+                receiveValue: {}
+            )
+            .store(in: &cancellables)
+    }
+    
+    func onDeleteMissionObjective(uuid: UUID) {
+        missionManager.deleteMissionObjective(uuid: uuid)
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .failure(let error): self.presenter.presentError(error: error)
+                    case .finished: break
+                    }
+                },
+                receiveValue: {}
+            )
+            .store(in: &cancellables)
+    }
+    
+    func onDeleteSubtask(uuid: UUID) {
+        missionManager.deleteSubtask(uuid: uuid)
             .sink(
                 receiveCompletion: { completion in
                     switch completion {
@@ -125,6 +159,16 @@ extension MissionListInteractor: MissionListPresentableListener {
     func onUpdateMission(mission: Mission) {
         do {
             try missionManager.update()
+            self.setupMissionLists(missionManager: missionManager)
+        } catch let error {
+            presenter.presentError(error: error)
+        }
+    }
+    
+    func onSave() {
+        do {
+            try missionManager.update()
+            self.setupMissionLists(missionManager: missionManager)
         } catch let error {
             presenter.presentError(error: error)
         }

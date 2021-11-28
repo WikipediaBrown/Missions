@@ -10,7 +10,14 @@ import SwiftUI
 
 struct MissionView: View {
     
-    @State var mission: Mission
+    @ObservedObject var mission: Mission
+
+    @State var showNewMissionObjectiveView = false
+    @State var update: Bool = false
+    
+    // MARK: - Taps
+
+    let tapSubject: PassthroughSubject<MissionListView.Taps, Never>
     
     var body: some View {
         
@@ -59,30 +66,60 @@ struct MissionView: View {
             )
             Section(
                 content: {
-//                    ForEach(
-//                        mission.subtasks.indices,
-//                        id: \.self,
-//                        content: { index in
-//                            TextField("", text: $mission.subtasks[index].text, prompt: Text("Enter subtask dude"))
-//                        }
-//                    )
-//                        .onDelete { mission.subtasks.remove(atOffsets: $0) }
+                    ForEach(
+                        mission.objectives.array as? [MissionObjective] ?? [],
+                        id: \.uuid,
+                        content: { missionObjective in
+                            NavigationLink(
+                                destination: { MissionObjectiveView(missionObjective: missionObjective, tapSubject: tapSubject) },
+                                label: { MissionObjectiveListItemView(missionObjective: missionObjective) }
+                            )
+                        }
+                    )
+                    .onDelete(perform: { indexSet in
+                        let objectives = indexSet.compactMap { mission.objectives.array[$0] as? MissionObjective }
+                        objectives.forEach { tapSubject.send(.deleteMissionObjective(uuid: $0.uuid)) }
+                    })
+                    .onMove { indexSet, index in
                         
-//                    Button(
-//                        action: {
-//                            if viewModel.subtasks.last != "" {
-//                                withAnimation {
-//                                    viewModel.subtasks.append("")
-//                                }
-//                            }
-//                        },
-//                        label: {
-//                            Label("Add a Subtask", systemImage: "plus.square.on.square")
-//                        }
-//                    )
+                        guard let objectives = mission.objectives.mutableCopy() as? NSMutableOrderedSet
+                        else { return }
+                        var index = index
+                        
+                        if index < 0 {
+                            index = 0
+                        }
+                        else if index >= mission.objectives.count {
+                            index = mission.objectives.count - 1
+                        }
+                        
+                        objectives.moveObjects(at: indexSet, to: index)
+                        mission.objectives = objectives
+                        mission.objectWillChange.send()
+                        tapSubject.send(.update(mission: mission))
+                        
+                    }
+                    Button(
+                        action: {
+                            showNewMissionObjectiveView.toggle()
+                        },
+                        label: {
+                            Label("Add Objective", systemImage: "list.dash")
+                        }
+                    )
+                        .buttonStyle(ButtonModifier(color: .indigo))
+                        .sheet(
+                            isPresented: $showNewMissionObjectiveView,
+                            onDismiss: {},
+                            content: {
+                                NewMissionObjectiveView()
+                            }
+                        )
                 },
                 header: {
-                    Label("Objective Subtasks", systemImage: "list.dash")
+                    EditButton()
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                        .overlay(Label("Objective Subtasks", systemImage: "list.dash"), alignment: .leading)
                 },
                 footer: {
                     Text("Add some subtasks if you need more direction...")
@@ -113,14 +150,10 @@ struct MissionView: View {
                     .buttonStyle(ButtonModifier(color: .red))
             }
         }
+        .navigationBarTitle("Objective", displayMode: .large)
         .listStyle(InsetGroupedListStyle())
         .navigationBarTitleDisplayMode(.large)
-        .navigationTitle(Text(mission.title))
     }
-    
-    // MARK: - Taps
-
-    let tapSubject: PassthroughSubject<MissionListView.Taps, Never>
 
 }
 

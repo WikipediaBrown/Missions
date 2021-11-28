@@ -10,7 +10,7 @@ import SwiftUI
 
 struct MissionListView: View {
         
-    @StateObject var viewModel: ViewModel = ViewModel()
+    @ObservedObject var viewModel: ViewModel = ViewModel()
     class ViewModel: ObservableObject {
         @Published var currentMissions: [Mission] = []
         @Published var backlogMissions: [Mission] = []
@@ -119,7 +119,7 @@ struct MissionListView: View {
             header: Text(headerText).foregroundColor(headerColor),
             footer: Text(footerText),
             content: {
-                ForEach(missions, id: \.lastUpdatedDate) { mission in
+                ForEach(missions, id: \.uuid) { mission in
                     NavigationLink(
                         destination: { MissionView(mission: mission, tapSubject: tapSubject) },
                         label: { MissionListItemView(mission: mission) }
@@ -152,7 +152,10 @@ struct MissionListView: View {
     enum Taps {
         case addMission
         case deleteMission(uuid: UUID)
+        case deleteMissionObjective(uuid: UUID)
+        case deleteSubtask(uuid: UUID)
         case update(mission: Mission)
+        case save
     }
     
 }

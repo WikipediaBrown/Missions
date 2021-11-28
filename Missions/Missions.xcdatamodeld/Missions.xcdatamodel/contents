@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Mission" representedClassName="Mission" syncable="YES">
         <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="imageData" optional="YES" attributeType="Binary"/>
@@ -8,7 +8,7 @@
         <attribute name="summary" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <relationship name="objectives" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MissionObjective" inverseName="mission" inverseEntity="MissionObjective"/>
+        <relationship name="objectives" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="MissionObjective" inverseName="mission" inverseEntity="MissionObjective"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="uuid"/>
@@ -21,7 +21,7 @@
         <attribute name="scheduledDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="mission" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Mission" inverseName="objectives" inverseEntity="Mission"/>
-        <relationship name="subtasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Subtask" inverseName="objective" inverseEntity="Subtask"/>
+        <relationship name="subtasks" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Subtask" inverseName="missionObjective" inverseEntity="Subtask"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="uuid"/>
@@ -31,7 +31,7 @@
     <entity name="Subtask" representedClassName="Subtask" syncable="YES">
         <attribute name="text" optional="YES" attributeType="String"/>
         <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <relationship name="objective" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MissionObjective" inverseName="subtasks" inverseEntity="MissionObjective"/>
+        <relationship name="missionObjective" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MissionObjective" inverseName="subtasks" inverseEntity="MissionObjective"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="uuid"/>

@@ -15,7 +15,10 @@ protocol MissionListPresentableListener: AnyObject {
     // interactor class.
     func onAddMission()
     func onDeleteMission(uuid: UUID)
+    func onDeleteMissionObjective(uuid: UUID)
+    func onDeleteSubtask(uuid: UUID)
     func onUpdateMission(mission: Mission)
+    func onSave()
 }
 
 final class MissionListViewController: UIHostingController<MissionListView>, MissionListPresentable, MissionListViewControllable {
@@ -40,6 +43,9 @@ final class MissionListViewController: UIHostingController<MissionListView>, Mis
                 case .addMission: self?.listener?.onAddMission()
                 case .deleteMission(uuid: let uuid): self?.listener?.onDeleteMission(uuid: uuid)
                 case .update(mission: let mission): self?.listener?.onUpdateMission(mission: mission)
+                case .deleteMissionObjective(uuid: let uuid): self?.listener?.onDeleteMissionObjective(uuid: uuid)
+                case .deleteSubtask(uuid: let uuid): self?.listener?.onDeleteSubtask(uuid: uuid)
+                case .save: self?.listener?.onSave()
                 }
             }
             .store(in: &cancellables)
