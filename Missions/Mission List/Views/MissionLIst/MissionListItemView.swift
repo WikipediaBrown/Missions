@@ -37,12 +37,12 @@ struct MissionListItemView: View {
                         ).labelStyle(DefaultLabelStyle())
                         Label(
                             title: {
-                                Text(mission.lastUpdatedDate.formatted())
+                                Text(mission.summary)
                                     .font(.subheadline)
                                     .fontWeight(.black)
                             },
                             icon: {
-                                Image(systemName: "calendar.circle.fill")
+                                Image(systemName: "text.justify.left")
                                     .foregroundColor(.primary)
                             }
                         )

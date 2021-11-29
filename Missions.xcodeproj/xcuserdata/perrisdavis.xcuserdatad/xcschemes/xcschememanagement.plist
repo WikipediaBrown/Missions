@@ -7,7 +7,25 @@
 		<key>Missions.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>63A6A2AB26A7C0180092612F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>63A6A2C426A7C0180092612F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>63A6A2CF26A7C0180092612F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

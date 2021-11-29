@@ -171,14 +171,14 @@ class MissionsManager: MissionsManaging {
     
     static func missionsQuery(predicate: NSPredicate? = nil) -> NSFetchRequest<NSFetchRequestResult> {
         let request = Mission.fetchRequest
-        request.sortDescriptors = [NSSortDescriptor(key: "lastUpdatedDate", ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(key: "lastUpdatedDate", ascending: false)]
         request.predicate = predicate
         return request
     }
 
     static func currentMissionsQuery(missionState: MissionState) -> NSFetchRequest<NSFetchRequestResult> {
         let request = Mission.fetchRequest
-        request.sortDescriptors = [NSSortDescriptor(key: "lastUpdatedDate", ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(key: "lastUpdatedDate", ascending: false)]
         request.predicate = NSPredicate(format: "missionState == %d", missionState.rawValue)
         return request
     }

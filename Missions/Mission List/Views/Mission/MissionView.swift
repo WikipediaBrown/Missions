@@ -99,22 +99,22 @@ struct MissionView: View {
                         tapSubject.send(.update(mission: mission))
                         
                     }
-                    Button(
-                        action: {
-                            showNewMissionObjectiveView.toggle()
-                        },
-                        label: {
-                            Label("Add Objective", systemImage: "list.dash")
-                        }
-                    )
-                        .buttonStyle(ButtonModifier(color: .indigo))
-                        .sheet(
-                            isPresented: $showNewMissionObjectiveView,
-                            onDismiss: {},
-                            content: {
-                                NewMissionObjectiveView()
-                            }
-                        )
+//                    Button(
+//                        action: {
+//                            showNewMissionObjectiveView.toggle()
+//                        },
+//                        label: {
+//                            Label("Add Objective", systemImage: "list.dash")
+//                        }
+//                    )
+//                        .buttonStyle(ButtonModifier(color: .indigo))
+//                        .sheet(
+//                            isPresented: $showNewMissionObjectiveView,
+//                            onDismiss: {},
+//                            content: {
+//                                NewMissionObjectiveView()
+//                            }
+//                        )
                 },
                 header: {
                     EditButton()
@@ -150,11 +150,15 @@ struct MissionView: View {
                     .buttonStyle(ButtonModifier(color: .red))
             }
         }
-        .navigationBarTitle("Objective", displayMode: .large)
+        .navigationBarTitle("Mission", displayMode: .large)
         .listStyle(InsetGroupedListStyle())
         .navigationBarTitleDisplayMode(.large)
+        .onDisappear {
+            mission.lastUpdatedDate = Date()
+            tapSubject.send(.save)
+        }
     }
-
+    
 }
 
 struct MissionView_Previews: PreviewProvider {

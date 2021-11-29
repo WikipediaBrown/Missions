@@ -1,0 +1,41 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+
+  desc "Resolve Signing Certificates and Provisioning Profiles."
+  lane :match_with_options do |options|
+    matchType = options[:type]
+    match(type: matchType, readonly: true)
+  end
+
+  desc "Create and Frame Screenshots of Missions."
+  lane :create_screenshots do
+    snapshot
+    frameit(path: "./docs", rose_gold: true)
+  end
+
+  desc "Unit Test HueBoo."
+  lane :unit_test do
+    scan(only_testing: "MissionsTests")
+  end
+
+  desc "UI Test Missions."
+  lane :ui_test do
+    scan(only_testing: "MissionsUITests")
+  end
+end
