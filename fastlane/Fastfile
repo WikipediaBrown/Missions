@@ -31,11 +31,11 @@ platform :ios do
 
   desc "Unit Test HueBoo."
   lane :unit_test do
-    scan(only_testing: "MissionsTests")
+    scan(only_testing: "MissionsTests"configuration: "Debug")
   end
 
   desc "UI Test Missions."
   lane :ui_test do
-    scan(only_testing: "MissionsUITests")
+    scan(only_testing: "MissionsUITests", configuration: "Debug")
   end
 end
