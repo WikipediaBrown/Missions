@@ -1,6 +1,6 @@
 name: CI
 on:
-  pull-request:
+  pull_request:
     branches:
     - develop
 jobs:
@@ -17,4 +17,4 @@ jobs:
       - name: Bundle Install
         run: bundle install
       - name: Unit Tests
-        run: bundle exec fastlane unit_test
+        run: bundle exec fastlane match_with_options appstore
