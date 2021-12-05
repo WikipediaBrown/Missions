@@ -29,9 +29,9 @@ platform :ios do
     frameit(path: "./docs", rose_gold: true)
   end
 
-  desc "Unit Test HueBoo."
+  desc "Unit Test Missions."
   lane :unit_test do
-    scan(only_testing: "MissionsTests"configuration: "Debug")
+    scan(only_testing: "MissionsTests", configuration: "Debug")
   end
 
   desc "UI Test Missions."
