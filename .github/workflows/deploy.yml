@@ -17,4 +17,4 @@ jobs:
       - name: Bundle Install
         run: bundle install
       - name: Unit Tests
-        run: bundle exec fastlane match_with_options appstore
+        run: bundle exec fastlane match_with_options
