@@ -1,5 +1,5 @@
 app_identifier("com.IamGoodBad.Missions") # The bundle identifier of your app
-apple_id("davisperris@gmail.com") # Your Apple email address
+# apple_id("davisperris@gmail.com") # Your Apple email address
 
 itc_team_id("118049151") # App Store Connect Team ID
 team_id("4AM5US9G8B") # Developer Portal Team ID
