@@ -20,6 +20,13 @@ platform :ios do
   desc "Send HueBoo to TestFlight."
   lane :release_to_testflight do
     build_for_apple_distribution(configuration: "Beta")
+    
+    app_store_connect_api_key(
+      key_id: ENV['APP_STORE_CONNECT_KEY_ID'],
+      issuer_id: ENV['APP_STORE_CONNECT_ISSUER_ID'],
+      key_content: ENV['APP_STORE_CONNECT_KEY_CONTENT']
+    )
+
     pilot(
       ipa: "./fastlane/apple_build/Missions.ipa",
       skip_waiting_for_build_processing: false,
