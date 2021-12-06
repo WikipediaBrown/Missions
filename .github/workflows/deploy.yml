@@ -7,14 +7,17 @@ jobs:
   poop:
     name: Test
     runs-on: macOS-latest
-    strategy:
-      matrix:
-        destination: ['platform=iOS Simulator,OS=13.1,name=iPhone 8']
+    # strategy:
+    #   matrix:
+    #     destination: ['platform=iOS Simulator,OS=13.1,name=iPhone 8']
         # xcode: ['/Applications/Xcode_11.1.app/Contents/Developer']
+
     steps:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Bundle Install
         run: bundle install
       - name: Unit Tests
+        env:
+          MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
         run: bundle exec fastlane match_with_options
