@@ -25,4 +25,5 @@
 # test_words(level: :error)
 # unreachable_urls(level: :error)
 # custom_text(data: ["fabric"], level: :warn)
+app_identifier("com.IamGoodBad.Missions") # The bundle identifier of your app
 include_in_app_purchases false
