@@ -16,6 +16,7 @@
 default_platform(:ios)
 
 platform :ios do
+  setup_ci if ENV['CI']
 
   desc "Resolve Signing Certificates and Provisioning Profiles."
   lane :match_with_options do |options|
