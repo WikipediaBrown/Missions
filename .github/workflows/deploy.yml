@@ -20,4 +20,4 @@ jobs:
       - name: Bundle Install
         run: bundle install
       - name: Unit Tests
-        run: bundle exec fastlane match_with_options
+        run: bundle exec fastlane release_to_testflight

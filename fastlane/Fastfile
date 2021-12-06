@@ -16,7 +16,31 @@
 default_platform(:ios)
 
 platform :ios do
-  setup_ci if ENV['CI']
+
+  desc "Send HueBoo to TestFlight."
+  lane :release_to_testflight do
+    build_for_apple_distribution
+    pilot(
+      ipa: "./fastlane/apple_build/Missions.ipa",
+      skip_waiting_for_build_processing: false,
+      changelog: "Version {lane_context[SharedValues: VERSION_NUMBER]}, Build {lane_context[SharedValues: BUILD_NUMBER]}",
+      uses_non_exempt_encryption: false
+    )
+  end
+  
+  desc "Build for either TestFlight or AppStore"
+  lane :build_for_apple_distribution do
+    precheck
+    unit_test
+    ui_test
+    create_screenshots
+    match_with_options(type: "appstore")
+    increment_build_number(build_number: Time.now.to_i)
+    gym(
+      output_directory: "./fastlane/apple_build",
+      export_method: "app-store"
+    )
+  end
 
   desc "Resolve Signing Certificates and Provisioning Profiles."
   lane :match_with_options do |options|
