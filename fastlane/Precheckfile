@@ -25,4 +25,4 @@
 # test_words(level: :error)
 # unreachable_urls(level: :error)
 # custom_text(data: ["fabric"], level: :warn)
-include_in_app_purchases(level: :skip)
+include_in_app_purchases false
