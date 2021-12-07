@@ -37,11 +37,11 @@ platform :ios do
   
   desc "Build for either TestFlight or AppStore"
   lane :build_for_apple_distribution do |configuration|
-    setup_app_store_connect_api_key
+    fastlane snapshot init
     # precheck
     unit_test
-    ui_test
-    create_screenshots
+    # ui_test
+    # create_screenshots
     match_with_options(type: "appstore")
     increment_build_number(build_number: Time.now.to_i)
     gym(
