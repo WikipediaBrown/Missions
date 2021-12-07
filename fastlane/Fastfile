@@ -37,9 +37,9 @@ platform :ios do
   
   desc "Build for either TestFlight or AppStore"
   lane :build_for_apple_distribution do |configuration|
-    fastlane snapshot init
+    setup_app_store_connect_api_key
     # precheck
-    unit_test
+    # unit_test
     # ui_test
     # create_screenshots
     match_with_options(type: "appstore")
