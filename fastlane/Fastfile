@@ -39,7 +39,7 @@ platform :ios do
   lane :build_for_apple_distribution do |configuration|
     setup_app_store_connect_api_key
     # precheck
-    # unit_test
+    unit_test
     # ui_test
     # create_screenshots
     match_with_options(type: "appstore")
