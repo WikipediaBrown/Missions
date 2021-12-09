@@ -26,7 +26,7 @@ jobs:
       - name: Bundle Install
         run: bundle install
       - name: Bundle Install
-        run: bundle fastlane setup_ci
+        run: bundle exec fastlane setup_ci
       # - name: Unit Tests
       #   run: bundle exec fastlane unit_test
       # - name: UI Tests
