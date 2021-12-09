@@ -11,7 +11,6 @@
 		63A6A2B226A7C0180092612F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A2B126A7C0180092612F /* SceneDelegate.swift */; };
 		63A6A2BA26A7C0180092612F /* Missions.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A2B826A7C0180092612F /* Missions.xcdatamodeld */; };
 		63A6A2BC26A7C0180092612F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63A6A2BB26A7C0180092612F /* Assets.xcassets */; };
-		63A6A2BF26A7C0180092612F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63A6A2BD26A7C0180092612F /* LaunchScreen.storyboard */; };
 		63A6A2CA26A7C0180092612F /* MissionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A2C926A7C0180092612F /* MissionsTests.swift */; };
 		63A6A2D526A7C0180092612F /* MissionsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A2D426A7C0180092612F /* MissionsUITests.swift */; };
 		63A6A2E426A7C0630092612F /* napkin in Frameworks */ = {isa = PBXBuildFile; productRef = 63A6A2E326A7C0630092612F /* napkin */; };
@@ -76,7 +75,6 @@
 		63A6A2B126A7C0180092612F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		63A6A2B926A7C0180092612F /* Missions.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Missions.xcdatamodel; sourceTree = "<group>"; };
 		63A6A2BB26A7C0180092612F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		63A6A2BE26A7C0180092612F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63A6A2C026A7C0180092612F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63A6A2C526A7C0180092612F /* MissionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MissionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63A6A2C926A7C0180092612F /* MissionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionsTests.swift; sourceTree = "<group>"; };
@@ -178,7 +176,6 @@
 				63A6A2EA26A7E3E80092612F /* Mission List */,
 				63A6A2FB26A7F3320092612F /* Add Mission */,
 				63A6A2BB26A7C0180092612F /* Assets.xcassets */,
-				63A6A2BD26A7C0180092612F /* LaunchScreen.storyboard */,
 				63A6A2C026A7C0180092612F /* Info.plist */,
 				63A6A2E626A7CFBD0092612F /* Missions.entitlements */,
 				63A6A2B826A7C0180092612F /* Missions.xcdatamodeld */,
@@ -443,7 +440,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63A6A2BF26A7C0180092612F /* LaunchScreen.storyboard in Resources */,
 				63A6A2BC26A7C0180092612F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,17 +536,6 @@
 			targetProxy = 63A6A2D126A7C0180092612F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		63A6A2BD26A7C0180092612F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				63A6A2BE26A7C0180092612F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		63A6A2D726A7C0180092612F /* Debug */ = {
