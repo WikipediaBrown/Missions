@@ -32,7 +32,8 @@ platform :ios do
   desc "Update Metadata"
   lane :update_metadata do  
     deliver(
-      metadata_path: "./metadata"
+      metadata_path: "./metadata",
+      skip_binary_upload: true
     ) 
   end
 
