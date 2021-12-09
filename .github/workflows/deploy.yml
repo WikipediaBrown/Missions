@@ -28,4 +28,4 @@ jobs:
       # - name: Unit Tests
       #   run: bundle exec fastlane unit_test
       - name: Release To TestFlight
-        run: bundle exec fastlane release_to_testflight
+        run: bundle exec fastlane build_for_apple_distribution
