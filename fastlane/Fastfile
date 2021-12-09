@@ -20,21 +20,13 @@ platform :ios do
   desc "Send Missions to TestFlight."
   lane :release_to_testflight do
     build_for_apple_distribution(configuration: "Beta")
-    update_metadata
+    
     pilot(
       ipa: "./fastlane/apple_build/Missions.ipa",
       skip_waiting_for_build_processing: false,
       changelog: "Version {lane_context[SharedValues: VERSION_NUMBER]}, Build {lane_context[SharedValues: BUILD_NUMBER]}",
       uses_non_exempt_encryption: false
     )
-  end
-
-  desc "Update Metadata"
-  lane :update_metadata do  
-    deliver(
-      metadata_path: "./metadata",
-      skip_binary_upload: true
-    ) 
   end
 
   desc "Build for either TestFlight or AppStore"
