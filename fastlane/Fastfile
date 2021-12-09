@@ -30,7 +30,7 @@ platform :ios do
   
   desc "Build for either TestFlight or AppStore"
   lane :build_for_apple_distribution do |configuration|
-    setup_ci
+    # setup_ci
     setup_app_store_connect_api_key
     precheck
     create_screenshots
