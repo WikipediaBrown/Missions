@@ -17,9 +17,10 @@ default_platform(:ios)
 
 platform :ios do
 
-  desc "Send HueBoo to TestFlight."
+  desc "Send Missions to TestFlight."
   lane :release_to_testflight do
     build_for_apple_distribution(configuration: "Beta")
+    update_metadata
     pilot(
       ipa: "./fastlane/apple_build/Missions.ipa",
       skip_waiting_for_build_processing: false,
@@ -27,7 +28,14 @@ platform :ios do
       uses_non_exempt_encryption: false
     )
   end
-  
+
+  desc "Update Metadata"
+  lane :update_metadata do  
+    deliver(
+      metadata_path: "./metadata"
+    ) 
+  end
+
   desc "Build for either TestFlight or AppStore"
   lane :build_for_apple_distribution do |configuration|
     setup_ci
