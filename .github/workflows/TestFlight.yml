@@ -4,7 +4,7 @@ on:
     branches:
     - develop
 jobs:
-  poop:
+  beta:
     name: Releast to TestFlight
     runs-on: macOS-latest
     # strategy:
@@ -18,8 +18,10 @@ jobs:
       APP_STORE_CONNECT_KEY_CONTENT: ${{ secrets.APP_STORE_CONNECT_KEY_CONTENT }}
       APP_STORE_CONNECT_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
       FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+      ITC_TEAM_ID: ${{ secrets.ITC_TEAM_ID }}
       MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
       MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+      TEAM_ID: ${{ secrets.TEAM_ID }}
     steps:
       - name: Checkout
         uses: actions/checkout@v1
