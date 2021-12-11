@@ -4,7 +4,7 @@ on:
     branches:
     - main
 jobs:
-  poop:
+  release:
     name: Release To AppStore
     runs-on: macOS-latest
     # strategy:

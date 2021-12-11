@@ -4,7 +4,7 @@ on:
     branches:
     - develop
 jobs:
-  testflight:
+  beta:
     name: Releast to TestFlight
     runs-on: macOS-latest
     # strategy:
