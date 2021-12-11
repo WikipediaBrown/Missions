@@ -20,6 +20,14 @@ platform :ios do
   desc "Send Missions to AppStore."
   lane :release_to_appstore do
     build_for_apple_distribution(configuration: "AppStore")
+    # precheck
+    # create_screenshots
+    upload_app_privacy_details_to_app_store(
+      username: ENV['APPLE_ID'],
+      team_name: ENV['APP_STORE_CONNECT_KEY_ID'],
+      app_identifier: ENV['APP_IDENTIFIER'],
+      json_path: "fastlane/app_privacy_details.json"
+    )
     deliver(
       automatic_release: true,
       force: true,
