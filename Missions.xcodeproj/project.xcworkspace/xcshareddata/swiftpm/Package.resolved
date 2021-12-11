@@ -2,12 +2,30 @@
   "object": {
     "pins": [
       {
+        "package": "MatomoTracker",
+        "repositoryURL": "https://github.com/matomo-org/matomo-sdk-ios.git",
+        "state": {
+          "branch": null,
+          "revision": "8abf0b655d4d3a937f96b8a6e0b66e21cb6b312d",
+          "version": "7.4.1"
+        }
+      },
+      {
         "package": "napkin",
         "repositoryURL": "https://github.com/WikipediaBrown/napkin.git",
         "state": {
           "branch": "main",
           "revision": "70104642d9b2b670d6aa20ee22702613c56fa573",
           "version": null
+        }
+      },
+      {
+        "package": "PLCrashReporter",
+        "repositoryURL": "https://github.com/microsoft/plcrashreporter.git",
+        "state": {
+          "branch": null,
+          "revision": "6b27393cad517c067dceea85fadf050e70c4ceaa",
+          "version": "1.10.1"
         }
       }
     ]

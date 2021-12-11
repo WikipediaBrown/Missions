@@ -50,6 +50,8 @@
 		7BAC2ADA274B7DEE00C174BF /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAC2AD9274B7DEE00C174BF /* ErrorHandling.swift */; };
 		7BAC2ADC274B905400C174BF /* MissionListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAC2ADB274B905400C174BF /* MissionListItemView.swift */; };
 		7BD877552761A5070079E8D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BD877542761A5070079E8D1 /* LaunchScreen.storyboard */; };
+		7BD877582762E7CB0079E8D1 /* MatomoTracker in Frameworks */ = {isa = PBXBuildFile; productRef = 7BD877572762E7CB0079E8D1 /* MatomoTracker */; };
+		7BD8775B2762F2F40079E8D1 /* CrashReporter in Frameworks */ = {isa = PBXBuildFile; productRef = 7BD8775A2762F2F40079E8D1 /* CrashReporter */; };
 		7BEA779A274BAB7600BF95CA /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA7799274BAB7600BF95CA /* MissionView.swift */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +130,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BD877582762E7CB0079E8D1 /* MatomoTracker in Frameworks */,
+				7BD8775B2762F2F40079E8D1 /* CrashReporter in Frameworks */,
 				63A6A2E426A7C0630092612F /* napkin in Frameworks */,
 				63A6A2E926A7D05E0092612F /* CloudKit.framework in Frameworks */,
 			);
@@ -352,6 +356,8 @@
 			name = Missions;
 			packageProductDependencies = (
 				63A6A2E326A7C0630092612F /* napkin */,
+				7BD877572762E7CB0079E8D1 /* MatomoTracker */,
+				7BD8775A2762F2F40079E8D1 /* CrashReporter */,
 			);
 			productName = Missions;
 			productReference = 63A6A2AC26A7C0180092612F /* Missions.app */;
@@ -426,6 +432,8 @@
 			mainGroup = 63A6A2A326A7C0180092612F;
 			packageReferences = (
 				63A6A2E226A7C0630092612F /* XCRemoteSwiftPackageReference "napkin" */,
+				7BD877562762E7CB0079E8D1 /* XCRemoteSwiftPackageReference "matomo-sdk-ios" */,
+				7BD877592762F2F40079E8D1 /* XCRemoteSwiftPackageReference "plcrashreporter" */,
 			);
 			productRefGroup = 63A6A2AD26A7C0180092612F /* Products */;
 			projectDirPath = "";
@@ -968,6 +976,22 @@
 				kind = branch;
 			};
 		};
+		7BD877562762E7CB0079E8D1 /* XCRemoteSwiftPackageReference "matomo-sdk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/matomo-org/matomo-sdk-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		7BD877592762F2F40079E8D1 /* XCRemoteSwiftPackageReference "plcrashreporter" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/microsoft/plcrashreporter.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -975,6 +999,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 63A6A2E226A7C0630092612F /* XCRemoteSwiftPackageReference "napkin" */;
 			productName = napkin;
+		};
+		7BD877572762E7CB0079E8D1 /* MatomoTracker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7BD877562762E7CB0079E8D1 /* XCRemoteSwiftPackageReference "matomo-sdk-ios" */;
+			productName = MatomoTracker;
+		};
+		7BD8775A2762F2F40079E8D1 /* CrashReporter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7BD877592762F2F40079E8D1 /* XCRemoteSwiftPackageReference "plcrashreporter" */;
+			productName = CrashReporter;
 		};
 /* End XCSwiftPackageProductDependency section */
 

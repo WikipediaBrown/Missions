@@ -17,6 +17,29 @@ default_platform(:ios)
 
 platform :ios do
 
+  desc "Send Missions to AppStore."
+  lane :release_to_appstore do
+    build_for_apple_distribution(configuration: "AppStore")
+    deliver(
+      automatic_release: true,
+      force: true,
+      overwrite_screenshots: true,
+      reject_if_possible: true,
+      run_precheck_before_submit: false,
+      screenshots_path: "./docs",
+      submit_for_review: true,
+      submission_information: {
+        export_compliance_platform: 'ios',
+        export_compliance_compliance_required: false,
+        export_compliance_encryption_updated: false,
+        export_compliance_uses_encryption: false,
+        export_compliance_contains_third_party_cryptography: false,
+        export_compliance_contains_proprietary_cryptography: false,
+        export_compliance_available_on_french_store: false
+      }
+    )
+  end
+
   desc "Send Missions to TestFlight."
   lane :release_to_testflight do
     build_for_apple_distribution(configuration: "Beta")
