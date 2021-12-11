@@ -27,18 +27,7 @@ class MissionsUITests: XCTestCase {
         let app = XCUIApplication()
         setupSnapshot(app)
         app.launch()
-        app.alerts["Apple ID Verification"].scrollViews.otherElements.buttons["Not Now"].tap()
-        
-        let tablesQuery = app.tables
-        let jjkButton = tablesQuery/*@START_MENU_TOKEN@*/.buttons["Jjk"]/*[[".cells[\"Jjk\"].buttons[\"Jjk\"]",".buttons[\"Jjk\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-        jjkButton.tap()
-        
-        let missionsButton = app.navigationBars["Mission"].buttons["Missions"]
-        missionsButton.tap()
-        tablesQuery.cells["Jjk"].children(matching: .other).element(boundBy: 0).tap()
-        missionsButton.tap()
-        jjkButton.tap()
-        snapshot("0Launch")
+        snapshot("Launch")
 
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
