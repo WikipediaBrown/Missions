@@ -23,7 +23,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Bundle Install
+      - name: Install Bundler
         run: bundle install
       - name: Unit Tests
         run: bundle exec fastlane unit_test
