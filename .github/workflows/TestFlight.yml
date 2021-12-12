@@ -28,4 +28,4 @@ jobs:
       - name: Bundle Install
         run: bundle install
       - name: Release To TestFlight
-        run: bundle exec fastlane release_to_testflight
+        run: bundle exec fastlane release_to_internal_testers
