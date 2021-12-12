@@ -113,6 +113,7 @@ platform :ios do
           privacy_policy_url: ENV['PRIVACY_POLICY_URL'],
           description: "Default description",
         }
+      }
     )
   end
 
