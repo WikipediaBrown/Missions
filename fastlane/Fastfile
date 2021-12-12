@@ -80,7 +80,6 @@ platform :ios do
       skip_waiting_for_build_processing: false,
       changelog: "Version {lane_context[SharedValues: VERSION_NUMBER]}, Build {lane_context[SharedValues: BUILD_NUMBER]}",
       uses_non_exempt_encryption: false,
-      distribute_external: false,
       groups: "Developers"
     )
   end
