@@ -1,11 +1,10 @@
 name: CI
 on:
-  push:
-    branches:
-    - develop
+  schedule:
+    - cron:  '25 1 * * *'
 jobs:
   beta:
-    name: Releast to TestFlight
+    name: Send Nightly Build to TestFlight
     runs-on: macOS-latest
     # strategy:
     #   matrix:
@@ -28,4 +27,4 @@ jobs:
       - name: Bundle Install
         run: bundle install
       - name: Release To TestFlight
-        run: bundle exec fastlane release_to_internal_testers
+        run: bundle exec fastlane release_to_external_testers
