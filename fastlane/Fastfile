@@ -79,8 +79,7 @@ platform :ios do
       ipa: "./fastlane/apple_build/Missions.ipa",
       skip_waiting_for_build_processing: false,
       changelog: "Version {lane_context[SharedValues: VERSION_NUMBER]}, Build {lane_context[SharedValues: BUILD_NUMBER]}",
-      uses_non_exempt_encryption: false,
-      groups: "Developers"
+      uses_non_exempt_encryption: false
     )
   end
 
