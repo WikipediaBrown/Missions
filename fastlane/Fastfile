@@ -58,7 +58,7 @@ platform :ios do
   end
 
   desc "Send Missions to TestFlight."
-  lane :release_to_external_testers do
+  lane :release_to_external_testers do 
     build_for_apple_distribution(configuration: "Beta")
     
     pilot(
@@ -73,7 +73,7 @@ platform :ios do
 
   desc "Send Missions to TestFlight."
   lane :release_to_internal_testers do
-    build_for_apple_distribution(configuration: "Beta")
+    build_for_apple_distribution(configuration: "Debug")
     
     pilot(
       ipa: "./fastlane/apple_build/Missions.ipa",
