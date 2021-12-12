@@ -25,6 +25,9 @@ jobs:
       CONTACT_FIRST_NAME: ${{ secrets.CONTACT_FIRST_NAME }}
       CONTACT_LAST_NAME: ${{ secrets.CONTACT_LAST_NAME }}
       CONTACT_PHONE: ${{ secrets.CONTACT_PHONE }}
+      FEEDBACK_EMAIL: ${{ secrets.FEEDBACK_EMAIL }}
+      MARKETING_URL: ${{ secrets.MARKETING_URL }}
+      PRIVACY_POLICY_URL: ${{ secrets.PRIVACY_POLICY_URL }}
     steps:
       - name: Checkout
         uses: actions/checkout@v1
