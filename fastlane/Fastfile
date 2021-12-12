@@ -67,10 +67,19 @@ platform :ios do
       changelog: "Version {lane_context[SharedValues: VERSION_NUMBER]}, Build {lane_context[SharedValues: BUILD_NUMBER]}",
       uses_non_exempt_encryption: false,
       distribute_external: true,
-      groups: "Nightly"
+      groups: "Nightly",
+      beta_app_review_info: {
+        contact_email: ENV['CONTACT_EMAIL'],
+        contact_first_name: ENV['CONTACT_FIRST_NAME'],
+        contact_last_name: ENV['CONTACT_LAST_NAME'],
+        contact_phone: ENV['CONTACT_PHONE'],
+        # demo_account_name: "demo@email.com",
+        # demo_account_password: "connectapi",
+        notes: "this is review note for the reviewer <3 thank you for reviewing"
+      }
     )
   end
-
+      
   desc "Send Missions to TestFlight."
   lane :release_to_internal_testers do
     build_for_apple_distribution(configuration: "Debug")
@@ -79,7 +88,16 @@ platform :ios do
       ipa: "./fastlane/apple_build/Missions.ipa",
       skip_waiting_for_build_processing: false,
       changelog: "Version {lane_context[SharedValues: VERSION_NUMBER]}, Build {lane_context[SharedValues: BUILD_NUMBER]}",
-      uses_non_exempt_encryption: false
+      uses_non_exempt_encryption: false,
+      beta_app_review_info: {
+        contact_email: "email@email.com",
+        contact_first_name: "Connect",
+        contact_last_name: "API",
+        contact_phone: "5558675309",
+        demo_account_name: "demo@email.com",
+        demo_account_password: "connectapi",
+        notes: "this is review note for the reviewer <3 thank you for reviewing"
+      }
     )
   end
 
