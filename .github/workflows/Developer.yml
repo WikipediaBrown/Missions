@@ -5,7 +5,7 @@ on:
     - develop
 jobs:
   beta:
-    name: Release Develop Branch to TestFlight
+    name: Release TestFlight Developers
     runs-on: macOS-latest
     # strategy:
     #   matrix:
@@ -14,7 +14,7 @@ jobs:
     env:
       APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER }}
       APPLE_ID: ${{ secrets.APPLE_ID }}
-      APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+      APP_STORE_CONNECT_/ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
       APP_STORE_CONNECT_KEY_CONTENT: ${{ secrets.APP_STORE_CONNECT_KEY_CONTENT }}
       APP_STORE_CONNECT_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
       FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
