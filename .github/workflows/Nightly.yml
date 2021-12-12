@@ -21,6 +21,10 @@ jobs:
       MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
       MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
       TEAM_ID: ${{ secrets.TEAM_ID }}
+      CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
+      CONTACT_FIRST_NAME: ${{ secrets.CONTACT_FIRST_NAME }}
+      CONTACT_LAST_NAME: ${{ secrets.CONTACT_LAST_NAME }}
+      CONTACT_PHONE: ${{ secrets.CONTACT_PHONE }}
     steps:
       - name: Checkout
         uses: actions/checkout@v1
