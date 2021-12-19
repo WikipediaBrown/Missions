@@ -29,6 +29,9 @@
 		63A6A30A26A801D10092612F /* AddMissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A30926A801D10092612F /* AddMissionView.swift */; };
 		63A6A30E26A8050E0092612F /* PresentationLifeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A30D26A8050E0092612F /* PresentationLifeCycle.swift */; };
 		7B654923275EC38600DEE784 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B654921275EC37200DEE784 /* SnapshotHelper.swift */; };
+		7B8117AF276EADD700F5EAA7 /* ToggleButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8117AE276EADD700F5EAA7 /* ToggleButtonModifier.swift */; };
+		7B8117B1276EB06100F5EAA7 /* KeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8117B0276EB06100F5EAA7 /* KeyboardToolbar.swift */; };
+		7B8117B3276ECBEB00F5EAA7 /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8117B2276ECBEB00F5EAA7 /* SFSymbols.swift */; };
 		7B93C32D274F6390005824FC /* AddObjectiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93C32C274F6390005824FC /* AddObjectiveView.swift */; };
 		7B93C32F274F8B8E005824FC /* MissionObjective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93C32E274F8B8E005824FC /* MissionObjective.swift */; };
 		7B93C331274F8BBC005824FC /* Subtask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93C330274F8BBC005824FC /* Subtask.swift */; };
@@ -101,6 +104,9 @@
 		63A6A30926A801D10092612F /* AddMissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMissionView.swift; sourceTree = "<group>"; };
 		63A6A30D26A8050E0092612F /* PresentationLifeCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationLifeCycle.swift; sourceTree = "<group>"; };
 		7B654921275EC37200DEE784 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		7B8117AE276EADD700F5EAA7 /* ToggleButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButtonModifier.swift; sourceTree = "<group>"; };
+		7B8117B0276EB06100F5EAA7 /* KeyboardToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolbar.swift; sourceTree = "<group>"; };
+		7B8117B2276ECBEB00F5EAA7 /* SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbols.swift; sourceTree = "<group>"; };
 		7B93C32C274F6390005824FC /* AddObjectiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddObjectiveView.swift; sourceTree = "<group>"; };
 		7B93C32E274F8B8E005824FC /* MissionObjective.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionObjective.swift; sourceTree = "<group>"; };
 		7B93C330274F8BBC005824FC /* Subtask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subtask.swift; sourceTree = "<group>"; };
@@ -334,6 +340,9 @@
 				7BAC2ACE274B1DD500C174BF /* MadeInCascadiaView.swift */,
 				7BAC2AD3274B20A800C174BF /* ButtonModifier.swift */,
 				7B93C3322750462D005824FC /* ToggleListItem.swift */,
+				7B8117AE276EADD700F5EAA7 /* ToggleButtonModifier.swift */,
+				7B8117B0276EB06100F5EAA7 /* KeyboardToolbar.swift */,
+				7B8117B2276ECBEB00F5EAA7 /* SFSymbols.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -481,6 +490,7 @@
 				7B93C331274F8BBC005824FC /* Subtask.swift in Sources */,
 				7B93C33B27544803005824FC /* SubtaskListItemView.swift in Sources */,
 				7BAC2ABB27486BA700C174BF /* MissionsManager.swift in Sources */,
+				7B8117AF276EADD700F5EAA7 /* ToggleButtonModifier.swift in Sources */,
 				7BAC2AD1274B1E4D00C174BF /* Image.swift in Sources */,
 				63A6A2B026A7C0180092612F /* AppDelegate.swift in Sources */,
 				7BAC2ACF274B1DD500C174BF /* MadeInCascadiaView.swift in Sources */,
@@ -488,6 +498,7 @@
 				63A6A2EF26A7E3FF0092612F /* MissionListRouter.swift in Sources */,
 				7B93C339275373A3005824FC /* MissionObjectiveListItemView.swift in Sources */,
 				63A6A2BA26A7C0180092612F /* Missions.xcdatamodeld in Sources */,
+				7B8117B3276ECBEB00F5EAA7 /* SFSymbols.swift in Sources */,
 				63A6A30326A7F34E0092612F /* AddMissionInteractor.swift in Sources */,
 				7BAC2AD8274B7BC600C174BF /* Errors.swift in Sources */,
 				7BAC2ADA274B7DEE00C174BF /* ErrorHandling.swift in Sources */,
@@ -513,6 +524,7 @@
 				7BAC2ABF274875FD00C174BF /* MissionState.swift in Sources */,
 				7BAC2ACA2748853F00C174BF /* NSManagedObject.swift in Sources */,
 				7BAC2AC1274876E100C174BF /* Mission.swift in Sources */,
+				7B8117B1276EB06100F5EAA7 /* KeyboardToolbar.swift in Sources */,
 				63A6A2F826A7E5C80092612F /* MissionListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
