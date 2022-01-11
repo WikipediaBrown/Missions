@@ -28,7 +28,10 @@
 		63A6A30726A7FD830092612F /* SharedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A30626A7FD830092612F /* SharedViewController.swift */; };
 		63A6A30A26A801D10092612F /* AddMissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A30926A801D10092612F /* AddMissionView.swift */; };
 		63A6A30E26A8050E0092612F /* PresentationLifeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A30D26A8050E0092612F /* PresentationLifeCycle.swift */; };
+		7B2465A9276F4B4400CD7D4C /* SFSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 7B2465A8276F4B4400CD7D4C /* SFSymbols */; };
 		7B654923275EC38600DEE784 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B654921275EC37200DEE784 /* SnapshotHelper.swift */; };
+		7B8117AF276EADD700F5EAA7 /* ToggleButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8117AE276EADD700F5EAA7 /* ToggleButtonModifier.swift */; };
+		7B8117B1276EB06100F5EAA7 /* KeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8117B0276EB06100F5EAA7 /* KeyboardToolbar.swift */; };
 		7B93C32D274F6390005824FC /* AddObjectiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93C32C274F6390005824FC /* AddObjectiveView.swift */; };
 		7B93C32F274F8B8E005824FC /* MissionObjective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93C32E274F8B8E005824FC /* MissionObjective.swift */; };
 		7B93C331274F8BBC005824FC /* Subtask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93C330274F8BBC005824FC /* Subtask.swift */; };
@@ -101,6 +104,8 @@
 		63A6A30926A801D10092612F /* AddMissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMissionView.swift; sourceTree = "<group>"; };
 		63A6A30D26A8050E0092612F /* PresentationLifeCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationLifeCycle.swift; sourceTree = "<group>"; };
 		7B654921275EC37200DEE784 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		7B8117AE276EADD700F5EAA7 /* ToggleButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButtonModifier.swift; sourceTree = "<group>"; };
+		7B8117B0276EB06100F5EAA7 /* KeyboardToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolbar.swift; sourceTree = "<group>"; };
 		7B93C32C274F6390005824FC /* AddObjectiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddObjectiveView.swift; sourceTree = "<group>"; };
 		7B93C32E274F8B8E005824FC /* MissionObjective.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionObjective.swift; sourceTree = "<group>"; };
 		7B93C330274F8BBC005824FC /* Subtask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subtask.swift; sourceTree = "<group>"; };
@@ -134,6 +139,7 @@
 				7BD8775B2762F2F40079E8D1 /* CrashReporter in Frameworks */,
 				63A6A2E426A7C0630092612F /* napkin in Frameworks */,
 				63A6A2E926A7D05E0092612F /* CloudKit.framework in Frameworks */,
+				7B2465A9276F4B4400CD7D4C /* SFSymbols in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +340,8 @@
 				7BAC2ACE274B1DD500C174BF /* MadeInCascadiaView.swift */,
 				7BAC2AD3274B20A800C174BF /* ButtonModifier.swift */,
 				7B93C3322750462D005824FC /* ToggleListItem.swift */,
+				7B8117AE276EADD700F5EAA7 /* ToggleButtonModifier.swift */,
+				7B8117B0276EB06100F5EAA7 /* KeyboardToolbar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -358,6 +366,7 @@
 				63A6A2E326A7C0630092612F /* napkin */,
 				7BD877572762E7CB0079E8D1 /* MatomoTracker */,
 				7BD8775A2762F2F40079E8D1 /* CrashReporter */,
+				7B2465A8276F4B4400CD7D4C /* SFSymbols */,
 			);
 			productName = Missions;
 			productReference = 63A6A2AC26A7C0180092612F /* Missions.app */;
@@ -434,6 +443,7 @@
 				63A6A2E226A7C0630092612F /* XCRemoteSwiftPackageReference "napkin" */,
 				7BD877562762E7CB0079E8D1 /* XCRemoteSwiftPackageReference "matomo-sdk-ios" */,
 				7BD877592762F2F40079E8D1 /* XCRemoteSwiftPackageReference "plcrashreporter" */,
+				7B2465A7276F4B4400CD7D4C /* XCRemoteSwiftPackageReference "SFSymbols" */,
 			);
 			productRefGroup = 63A6A2AD26A7C0180092612F /* Products */;
 			projectDirPath = "";
@@ -481,6 +491,7 @@
 				7B93C331274F8BBC005824FC /* Subtask.swift in Sources */,
 				7B93C33B27544803005824FC /* SubtaskListItemView.swift in Sources */,
 				7BAC2ABB27486BA700C174BF /* MissionsManager.swift in Sources */,
+				7B8117AF276EADD700F5EAA7 /* ToggleButtonModifier.swift in Sources */,
 				7BAC2AD1274B1E4D00C174BF /* Image.swift in Sources */,
 				63A6A2B026A7C0180092612F /* AppDelegate.swift in Sources */,
 				7BAC2ACF274B1DD500C174BF /* MadeInCascadiaView.swift in Sources */,
@@ -513,6 +524,7 @@
 				7BAC2ABF274875FD00C174BF /* MissionState.swift in Sources */,
 				7BAC2ACA2748853F00C174BF /* NSManagedObject.swift in Sources */,
 				7BAC2AC1274876E100C174BF /* Mission.swift in Sources */,
+				7B8117B1276EB06100F5EAA7 /* KeyboardToolbar.swift in Sources */,
 				63A6A2F826A7E5C80092612F /* MissionListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -976,6 +988,14 @@
 				kind = branch;
 			};
 		};
+		7B2465A7276F4B4400CD7D4C /* XCRemoteSwiftPackageReference "SFSymbols" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WikipediaBrown/SFSymbols.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		7BD877562762E7CB0079E8D1 /* XCRemoteSwiftPackageReference "matomo-sdk-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/matomo-org/matomo-sdk-ios.git";
@@ -999,6 +1019,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 63A6A2E226A7C0630092612F /* XCRemoteSwiftPackageReference "napkin" */;
 			productName = napkin;
+		};
+		7B2465A8276F4B4400CD7D4C /* SFSymbols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B2465A7276F4B4400CD7D4C /* XCRemoteSwiftPackageReference "SFSymbols" */;
+			productName = SFSymbols;
 		};
 		7BD877572762E7CB0079E8D1 /* MatomoTracker */ = {
 			isa = XCSwiftPackageProductDependency;
