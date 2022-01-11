@@ -15,7 +15,7 @@
         "repositoryURL": "https://github.com/WikipediaBrown/napkin.git",
         "state": {
           "branch": "main",
-          "revision": "70104642d9b2b670d6aa20ee22702613c56fa573",
+          "revision": "e98c533affdaa2b42a5290565cbd1bb2ca76823f",
           "version": null
         }
       },
@@ -26,6 +26,15 @@
           "branch": null,
           "revision": "6b27393cad517c067dceea85fadf050e70c4ceaa",
           "version": "1.10.1"
+        }
+      },
+      {
+        "package": "SFSymbols",
+        "repositoryURL": "https://github.com/WikipediaBrown/SFSymbols.git",
+        "state": {
+          "branch": "master",
+          "revision": "59f5440e3c463e2f34b1ba189540eee67928c054",
+          "version": null
         }
       }
     ]

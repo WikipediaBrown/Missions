@@ -7,6 +7,7 @@
 
 import Combine
 import SwiftUI
+import SFSymbols
 
 struct MissionListView: View {
         
@@ -76,9 +77,11 @@ struct MissionListView: View {
                             self.tapSubject.send(.addMission)
                         },
                         label: {
-                            Image(systemName: "plus.app")
+//                            Image(uiImage: .plus.withRenderingMode(.alwaysTemplate))
+                            Image(systemName: .plusApp)
                                 .resizable()
                                 .scaledToFit()
+                                .aspectRatio(contentMode: .fit)
                                 .foregroundColor(.primary)
                             Text("Add a Mission")
                                 .foregroundColor(.primary)

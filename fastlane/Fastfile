@@ -22,7 +22,7 @@ platform :ios do
     build_for_apple_distribution(configuration: "AppStore")
     # precheck
     # create_screenshots
-    
+
     deliver(
       automatic_release: true,
       force: true,
@@ -33,7 +33,7 @@ platform :ios do
       submit_for_review: true,
 
       # Citing: https://github.com/artsy/eigen/blob/faa02e2746194d8d7c11899474de9c517435eca4/fastlane/Fastfile#L131-L149
-      
+
       # Comes from https://github.com/fastlane/fastlane/issues/5542#issuecomment-254201994
       submission_information: {
         add_id_info_serves_ads: false,
@@ -58,9 +58,9 @@ platform :ios do
   end
 
   desc "Send Missions to TestFlight."
-  lane :release_to_external_testers do 
+  lane :release_to_external_testers do
     build_for_apple_distribution(configuration: "Beta")
-    
+
     pilot(
       ipa: "./fastlane/apple_build/Missions.ipa",
       skip_waiting_for_build_processing: false,
@@ -92,11 +92,11 @@ platform :ios do
       }
     )
   end
-      
+
   desc "Send Missions to TestFlight."
   lane :release_to_internal_testers do
     build_for_apple_distribution(configuration: "Debug")
-    
+
     pilot(
       ipa: "./fastlane/apple_build/Missions.ipa",
       skip_waiting_for_build_processing: false,
@@ -143,7 +143,7 @@ platform :ios do
   end
 
   desc "Update AppStore Privacy Details"
-  lane :update_privacy_details do 
+  lane :update_privacy_details do
     upload_app_privacy_details_to_app_store(
       username: ENV['APPLE_ID'],
       team_name: ENV['APP_STORE_CONNECT_KEY_ID'],
@@ -162,6 +162,8 @@ platform :ios do
   end
 
   desc "Resolve Signing Certificates and Provisioning Profiles."
+  # See https://docs.github.com/en/rest/overview/other-authentication-methods#basic-authentication
+  # for info on setting the MATCH_GIT_BASIC_AUTHORIZATION environment variable
   lane :match_with_options do |options|
     matchType = options[:type]
     match(type: matchType, readonly: true)
