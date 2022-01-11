@@ -106,6 +106,9 @@ struct AddMissionView: View {
                 )
                 
             }
+            .toolbar {
+                KeyboardToolbar()
+            }
             .navigationBarTitle("Create a Mission", displayMode: .large)
         }
         .environmentObject(viewModel)

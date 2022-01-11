@@ -1,11 +1,10 @@
 name: CI
 on:
-  push:
-    branches:
-    - develop
+  schedule:
+    - cron:  '25 1 * * *'
 jobs:
   beta:
-    name: Releast to TestFlight
+    name: Send Nightly Build to TestFlight
     runs-on: macOS-latest
     # strategy:
     #   matrix:
@@ -22,10 +21,17 @@ jobs:
       MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
       MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
       TEAM_ID: ${{ secrets.TEAM_ID }}
+      CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
+      CONTACT_FIRST_NAME: ${{ secrets.CONTACT_FIRST_NAME }}
+      CONTACT_LAST_NAME: ${{ secrets.CONTACT_LAST_NAME }}
+      CONTACT_PHONE: ${{ secrets.CONTACT_PHONE }}
+      FEEDBACK_EMAIL: ${{ secrets.FEEDBACK_EMAIL }}
+      MARKETING_URL: ${{ secrets.MARKETING_URL }}
+      PRIVACY_POLICY_URL: ${{ secrets.PRIVACY_POLICY_URL }}
     steps:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Bundle Install
         run: bundle install
       - name: Release To TestFlight
-        run: bundle exec fastlane release_to_testflight
+        run: bundle exec fastlane release_to_external_testers
