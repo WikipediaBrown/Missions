@@ -1,0 +1,2 @@
+// debug.xcconfig from https://nshipster.com/xcconfig/
+APP_DISPLAY_NAME = $(PRODUCT_NAME) Debug
