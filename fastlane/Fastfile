@@ -59,6 +59,7 @@ platform :ios do
 
   desc "Send Missions to TestFlight."
   lane :release_to_external_testers do
+    add_badge(dark: false)
     build_for_apple_distribution(configuration: "Beta")
 
     pilot(

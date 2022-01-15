@@ -30,6 +30,9 @@
 		63A6A30E26A8050E0092612F /* PresentationLifeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A30D26A8050E0092612F /* PresentationLifeCycle.swift */; };
 		7B2465A9276F4B4400CD7D4C /* SFSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 7B2465A8276F4B4400CD7D4C /* SFSymbols */; };
 		7B654923275EC38600DEE784 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B654921275EC37200DEE784 /* SnapshotHelper.swift */; };
+		7B73C813278EB9EB00231F1E /* beta.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 7B73C810278EB9EB00231F1E /* beta.xcconfig */; };
+		7B73C814278EB9EB00231F1E /* debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 7B73C811278EB9EB00231F1E /* debug.xcconfig */; };
+		7B73C815278EB9EB00231F1E /* appstore.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 7B73C812278EB9EB00231F1E /* appstore.xcconfig */; };
 		7B8117AF276EADD700F5EAA7 /* ToggleButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8117AE276EADD700F5EAA7 /* ToggleButtonModifier.swift */; };
 		7B8117B1276EB06100F5EAA7 /* KeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8117B0276EB06100F5EAA7 /* KeyboardToolbar.swift */; };
 		7B93C32D274F6390005824FC /* AddObjectiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93C32C274F6390005824FC /* AddObjectiveView.swift */; };
@@ -104,6 +107,9 @@
 		63A6A30926A801D10092612F /* AddMissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMissionView.swift; sourceTree = "<group>"; };
 		63A6A30D26A8050E0092612F /* PresentationLifeCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationLifeCycle.swift; sourceTree = "<group>"; };
 		7B654921275EC37200DEE784 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		7B73C810278EB9EB00231F1E /* beta.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = beta.xcconfig; sourceTree = "<group>"; };
+		7B73C811278EB9EB00231F1E /* debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = debug.xcconfig; sourceTree = "<group>"; };
+		7B73C812278EB9EB00231F1E /* appstore.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = appstore.xcconfig; sourceTree = "<group>"; };
 		7B8117AE276EADD700F5EAA7 /* ToggleButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButtonModifier.swift; sourceTree = "<group>"; };
 		7B8117B0276EB06100F5EAA7 /* KeyboardToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolbar.swift; sourceTree = "<group>"; };
 		7B93C32C274F6390005824FC /* AddObjectiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddObjectiveView.swift; sourceTree = "<group>"; };
@@ -168,6 +174,9 @@
 				63A6A2D326A7C0180092612F /* MissionsUITests */,
 				63A6A2AD26A7C0180092612F /* Products */,
 				63A6A2E726A7D05E0092612F /* Frameworks */,
+				7B73C812278EB9EB00231F1E /* appstore.xcconfig */,
+				7B73C810278EB9EB00231F1E /* beta.xcconfig */,
+				7B73C811278EB9EB00231F1E /* debug.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -461,8 +470,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B73C814278EB9EB00231F1E /* debug.xcconfig in Resources */,
+				7B73C815278EB9EB00231F1E /* appstore.xcconfig in Resources */,
 				7BD877552761A5070079E8D1 /* LaunchScreen.storyboard in Resources */,
 				63A6A2BC26A7C0180092612F /* Assets.xcassets in Resources */,
+				7B73C813278EB9EB00231F1E /* beta.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,9 +576,9 @@
 /* Begin XCBuildConfiguration section */
 		63A6A2D726A7C0180092612F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B73C811278EB9EB00231F1E /* debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				APP_DISPLAY_NAME = "Missions Debug";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -692,9 +704,9 @@
 		};
 		7BB6787E27546AC000C6F835 /* AppStore */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B73C812278EB9EB00231F1E /* appstore.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				APP_DISPLAY_NAME = Missions;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -814,9 +826,9 @@
 		};
 		7BB6788A2754AE2B00C6F835 /* Beta */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B73C810278EB9EB00231F1E /* beta.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				APP_DISPLAY_NAME = "Missions β";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
