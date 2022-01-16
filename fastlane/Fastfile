@@ -61,7 +61,6 @@ platform :ios do
   lane :release_to_external_testers do
     add_badge(dark: false)
     build_for_apple_distribution(configuration: "Beta")
-
     pilot(
       ipa: "./fastlane/apple_build/Missions.ipa",
       skip_waiting_for_build_processing: false,
