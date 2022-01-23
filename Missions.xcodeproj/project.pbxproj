@@ -61,6 +61,7 @@
 		7BD877582762E7CB0079E8D1 /* MatomoTracker in Frameworks */ = {isa = PBXBuildFile; productRef = 7BD877572762E7CB0079E8D1 /* MatomoTracker */; };
 		7BD8775B2762F2F40079E8D1 /* CrashReporter in Frameworks */ = {isa = PBXBuildFile; productRef = 7BD8775A2762F2F40079E8D1 /* CrashReporter */; };
 		7BEA779A274BAB7600BF95CA /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA7799274BAB7600BF95CA /* MissionView.swift */; };
+		7BF87AF1279D4D310081DF2A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BF87AF0279D4D310081DF2A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,7 @@
 		7BAC2ADB274B905400C174BF /* MissionListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionListItemView.swift; sourceTree = "<group>"; };
 		7BD877542761A5070079E8D1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7BEA7799274BAB7600BF95CA /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
+		7BF87AF0279D4D310081DF2A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,9 +180,7 @@
 				63A6A2D326A7C0180092612F /* MissionsUITests */,
 				63A6A2AD26A7C0180092612F /* Products */,
 				63A6A2E726A7D05E0092612F /* Frameworks */,
-				7B73C812278EB9EB00231F1E /* appstore.xcconfig */,
-				7B73C810278EB9EB00231F1E /* beta.xcconfig */,
-				7B73C811278EB9EB00231F1E /* debug.xcconfig */,
+				7BF87AED279CF7350081DF2A /* Configurations */,
 			);
 			sourceTree = "<group>";
 		};
@@ -203,6 +203,7 @@
 				63A6A2FB26A7F3320092612F /* Add Mission */,
 				63A6A2BB26A7C0180092612F /* Assets.xcassets */,
 				63A6A2C026A7C0180092612F /* Info.plist */,
+				7BF87AF0279D4D310081DF2A /* GoogleService-Info.plist */,
 				7BD877542761A5070079E8D1 /* LaunchScreen.storyboard */,
 				63A6A2E626A7CFBD0092612F /* Missions.entitlements */,
 				63A6A2B826A7C0180092612F /* Missions.xcdatamodeld */,
@@ -360,6 +361,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		7BF87AED279CF7350081DF2A /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				7B73C812278EB9EB00231F1E /* appstore.xcconfig */,
+				7B73C810278EB9EB00231F1E /* beta.xcconfig */,
+				7B73C811278EB9EB00231F1E /* debug.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -478,6 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B73C814278EB9EB00231F1E /* debug.xcconfig in Resources */,
+				7BF87AF1279D4D310081DF2A /* GoogleService-Info.plist in Resources */,
 				7B73C815278EB9EB00231F1E /* appstore.xcconfig in Resources */,
 				7BD877552761A5070079E8D1 /* LaunchScreen.storyboard in Resources */,
 				63A6A2BC26A7C0180092612F /* Assets.xcassets in Resources */,
