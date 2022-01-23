@@ -131,7 +131,7 @@ platform :ios do
   lane :build_for_apple_distribution do |configuration|
     setup_ci
     setup_app_store_connect_api_key
-    sh("GooglePlistGenerationScript.sh")
+    sh("bash GooglePlistGenerationScript.sh")
     # precheck
     # create_screenshots
     match_with_options(type: "appstore")
