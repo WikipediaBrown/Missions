@@ -1,27 +1,23 @@
-#!/bin/bash
-# Google plist generation script for working in CI
-
-cat << EOF > Missions/GoogleService-Info.plist
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>550786922979-vo4p5n88rr9pv15tuarb8k89vskp5apk.apps.googleusercontent.com</string>
+	<string>810917191294-1fjk12q8vebfpinuc21po4otdf3ahq9f.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.550786922979-vo4p5n88rr9pv15tuarb8k89vskp5apk</string>
+	<string>com.googleusercontent.apps.810917191294-1fjk12q8vebfpinuc21po4otdf3ahq9f</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCCT5fuoN9i-C7ZNTXuwH6qtbf3bslu45c</string>
+	<string>AIzaSyBFZBCs4SeAYRUo4fuSPA33D2_RehtgT1I</string>
 	<key>GCM_SENDER_ID</key>
-	<string>550786922979</string>
+	<string>810917191294</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.IamGoodBad.Missions</string>
+	<string>com.IamGoodBad.Missions.beta</string>
 	<key>PROJECT_ID</key>
-	<string>missions-62207</string>
+	<string>missions-3463b</string>
 	<key>STORAGE_BUCKET</key>
-	<string>missions-62207.appspot.com</string>
+	<string>missions-3463b.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,7 +29,6 @@ cat << EOF > Missions/GoogleService-Info.plist
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:550786922979:ios:50d1ead6b82a15c51e48d6</string>
+	<string>1:810917191294:ios:214c4c5393855f7f33822f</string>
 </dict>
 </plist>
-EOF
