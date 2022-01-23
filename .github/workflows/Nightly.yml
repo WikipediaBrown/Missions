@@ -6,6 +6,7 @@ jobs:
   beta:
     name: Send Nightly Build to TestFlight
     runs-on: macOS-latest
+    environment: Beta
     # strategy:
     #   matrix:
     #     destination: ['platform=iOS Simulator,OS=13.1,name=iPhone 8']
