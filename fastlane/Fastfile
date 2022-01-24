@@ -59,7 +59,8 @@ platform :ios do
 
   desc "Send Missions to TestFlight."
   lane :release_to_external_testers do
-    add_badge(custom: "beta-overlay.png")
+    # Image Generated at https://onlinetexttools.com/convert-text-to-image: 1024 x 1024 PNG
+    add_badge(custom: "fastlane/beta-overlay.png")
     build_for_apple_distribution(configuration: "Beta")
     pilot(
       ipa: "./fastlane/apple_build/Missions.ipa",
@@ -168,7 +169,7 @@ platform :ios do
   # for info on setting the MATCH_GIT_BASIC_AUTHORIZATION environment variable
   lane :match_with_options do |options|
     matchType = options[:type]
-    match(type: matchType, readonly: true, app_identifier: "com.IamGoodBad.Missions")
+    match(type: matchType, readonly: true, app_identifier: "com.IamGoodBad.Missions.beta")
   end
 
   desc "Create and Frame Screenshots of Missions."
