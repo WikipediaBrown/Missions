@@ -36,7 +36,7 @@ jobs:
       - name: Bundle Install
         run: bundle install
       - name: Install Imagemagick
-        run: brew install imagemagick
+        run: brew install imagemagick && brew install librsvg
       - name: Install "Badge" Plugin
         run: bundle exec fastlane add_plugin badge
       - name: Release To Internal Testers
