@@ -169,7 +169,7 @@ platform :ios do
   # for info on setting the MATCH_GIT_BASIC_AUTHORIZATION environment variable
   lane :match_with_options do |options|
     matchType = options[:type]
-    match(type: matchType, readonly: true, app_identifier: "com.IamGoodBad.Missions")
+    match(type: matchType, readonly: true)
   end
 
   desc "Create and Frame Screenshots of Missions."
