@@ -20,41 +20,8 @@ platform :ios do
   desc "Send Missions to AppStore."
   lane :release_to_appstore do
     build_for_apple_distribution(configuration: "AppStore")
-    # precheck
     # create_screenshots
-
-    deliver(
-      automatic_release: true,
-      force: true,
-      overwrite_screenshots: true,
-      reject_if_possible: true,
-      run_precheck_before_submit: false,
-      screenshots_path: "./docs",
-      submit_for_review: true,
-
-      # Citing: https://github.com/artsy/eigen/blob/faa02e2746194d8d7c11899474de9c517435eca4/fastlane/Fastfile#L131-L149
-
-      # Comes from https://github.com/fastlane/fastlane/issues/5542#issuecomment-254201994
-      submission_information: {
-        add_id_info_serves_ads: false,
-        add_id_info_tracks_action: false,
-        add_id_info_tracks_install: false,
-        add_id_info_uses_idfa: false,
-        content_rights_has_rights: false,
-        content_rights_contains_third_party_content: false,
-
-        export_compliance_app_type: nil,
-        export_compliance_is_exempt: true,
-
-        export_compliance_platform: 'ios',
-        export_compliance_compliance_required: false,
-        export_compliance_encryption_updated: false,
-        export_compliance_uses_encryption: false,
-        export_compliance_contains_third_party_cryptography: false,
-        export_compliance_contains_proprietary_cryptography: false,
-        export_compliance_available_on_french_store: false
-      }
-    )
+    deliver
   end
 
   desc "Send Missions to TestFlight."
@@ -134,9 +101,8 @@ platform :ios do
     setup_ci
     setup_app_store_connect_api_key
     sh("bash GooglePlistGenerationScript.sh")
-    # precheck
     # create_screenshots
-    match_with_options(type: "appstore")
+    match(readonly: true)
     increment_build_number(build_number: Time.now.to_i)
     gym(
       configuration: configuration[:configuration],
@@ -164,13 +130,13 @@ platform :ios do
     )
   end
 
-  desc "Resolve Signing Certificates and Provisioning Profiles."
-  # See https://docs.github.com/en/rest/overview/other-authentication-methods#basic-authentication
-  # for info on setting the MATCH_GIT_BASIC_AUTHORIZATION environment variable
-  lane :match_with_options do |options|
-    matchType = options[:type]
-    match(type: matchType, readonly: true)
-  end
+  # desc "Resolve Signing Certificates and Provisioning Profiles."
+  # # See https://docs.github.com/en/rest/overview/other-authentication-methods#basic-authentication
+  # # for info on setting the MATCH_GIT_BASIC_AUTHORIZATION environment variable
+  # lane :match_with_options do |options|
+  #   matchType = options[:type]
+  #   match(type: matchType, readonly: true)
+  # end
 
   desc "Create and Frame Screenshots of Missions."
   lane :create_screenshots do
