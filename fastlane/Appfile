@@ -3,7 +3,7 @@ apple_id ENV['APPLE_ID'] # Your Apple email address
 
 itc_team_id ENV['ITC_TEAM_ID'] # App Store Connect Team ID
 team_id ENV['TEAM_ID'] # Developer Portal Team ID
-price_tier 0.00
+# price_tier 0.00
 
 # For more information about the Appfile, see:
 #     https://docs.fastlane.tools/advanced/#appfile
