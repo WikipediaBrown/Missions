@@ -63,6 +63,9 @@ platform :ios do
     add_badge(custom: "fastlane/beta-overlay.png")
     build_for_apple_distribution(configuration: "Beta")
     pilot(
+
+      app_identifier: "com.IamGoodBad.Missions",
+
       ipa: "./fastlane/apple_build/Missions.ipa",
       skip_waiting_for_build_processing: false,
       changelog: "Version {lane_context[SharedValues: VERSION_NUMBER]}, Build {lane_context[SharedValues: BUILD_NUMBER]}",
