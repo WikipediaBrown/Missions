@@ -64,7 +64,7 @@ platform :ios do
     build_for_apple_distribution(configuration: "Beta")
     pilot(
 
-      # app_identifier: "com.IamGoodBad.Missions",
+      app_identifier: "com.IamGoodBad.Missions",
 
       ipa: "./fastlane/apple_build/Missions.ipa",
       skip_waiting_for_build_processing: false,
@@ -99,7 +99,7 @@ platform :ios do
 
   desc "Send Missions to TestFlight."
   lane :release_to_internal_testers do
-    add_badge(custom: "beta-overlay.png")
+    # add_badge(custom: "beta-overlay.png")
     build_for_apple_distribution(configuration: "Debug")
     pilot(
       ipa: "./fastlane/apple_build/Missions.ipa",
