@@ -64,7 +64,7 @@ platform :ios do
     build_for_apple_distribution(configuration: "Beta")
     pilot(
 
-      app_identifier: "com.IamGoodBad.Missions",
+      # app_identifier: "com.IamGoodBad.Missions",
 
       ipa: "./fastlane/apple_build/Missions.ipa",
       skip_waiting_for_build_processing: false,
@@ -172,7 +172,7 @@ platform :ios do
   # for info on setting the MATCH_GIT_BASIC_AUTHORIZATION environment variable
   lane :match_with_options do |options|
     matchType = options[:type]
-    match(type: matchType, readonly: true)
+    match(type: matchType, readonly: true, app_identifier: "com.IamGoodBad.Missions.beta")
   end
 
   desc "Create and Frame Screenshots of Missions."
