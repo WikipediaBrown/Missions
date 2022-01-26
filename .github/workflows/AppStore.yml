@@ -8,10 +8,6 @@ jobs:
     name: Use Bundler & Fastlane to Deploy to Appstore
     runs-on: macOS-latest
     environment: Production
-    # strategy:
-    #   matrix:
-    #     destination: ['platform=iOS Simulator,OS=13.1,name=iPhone 8']
-        # xcode: ['/Applications/Xcode_11.1.app/Contents/Developer']
     env:
       APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER }}
       APPLE_ID: ${{ secrets.APPLE_ID }}
@@ -26,7 +22,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Bundle Install
+      - name: Install Bundler
         run: bundle install
       - name: Release To AppStore
         run: bundle exec fastlane release_to_appstore
