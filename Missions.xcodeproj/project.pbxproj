@@ -29,7 +29,12 @@
 		63A6A30A26A801D10092612F /* AddMissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A30926A801D10092612F /* AddMissionView.swift */; };
 		63A6A30E26A8050E0092612F /* PresentationLifeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6A30D26A8050E0092612F /* PresentationLifeCycle.swift */; };
 		7B2465A9276F4B4400CD7D4C /* SFSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 7B2465A8276F4B4400CD7D4C /* SFSymbols */; };
+		7B3D00982793AB4F00DE52BA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7B3D00972793AB4F00DE52BA /* FirebaseAuth */; };
+		7B3D009A2793AC3B00DE52BA /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3D00992793AC3B00DE52BA /* AuthenticationManager.swift */; };
 		7B654923275EC38600DEE784 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B654921275EC37200DEE784 /* SnapshotHelper.swift */; };
+		7B73C813278EB9EB00231F1E /* beta.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 7B73C810278EB9EB00231F1E /* beta.xcconfig */; };
+		7B73C814278EB9EB00231F1E /* debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 7B73C811278EB9EB00231F1E /* debug.xcconfig */; };
+		7B73C815278EB9EB00231F1E /* appstore.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 7B73C812278EB9EB00231F1E /* appstore.xcconfig */; };
 		7B8117AF276EADD700F5EAA7 /* ToggleButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8117AE276EADD700F5EAA7 /* ToggleButtonModifier.swift */; };
 		7B8117B1276EB06100F5EAA7 /* KeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8117B0276EB06100F5EAA7 /* KeyboardToolbar.swift */; };
 		7B93C32D274F6390005824FC /* AddObjectiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B93C32C274F6390005824FC /* AddObjectiveView.swift */; };
@@ -52,10 +57,12 @@
 		7BAC2AD8274B7BC600C174BF /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAC2AD7274B7BC600C174BF /* Errors.swift */; };
 		7BAC2ADA274B7DEE00C174BF /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAC2AD9274B7DEE00C174BF /* ErrorHandling.swift */; };
 		7BAC2ADC274B905400C174BF /* MissionListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAC2ADB274B905400C174BF /* MissionListItemView.swift */; };
-		7BD877552761A5070079E8D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BD877542761A5070079E8D1 /* LaunchScreen.storyboard */; };
 		7BD877582762E7CB0079E8D1 /* MatomoTracker in Frameworks */ = {isa = PBXBuildFile; productRef = 7BD877572762E7CB0079E8D1 /* MatomoTracker */; };
 		7BD8775B2762F2F40079E8D1 /* CrashReporter in Frameworks */ = {isa = PBXBuildFile; productRef = 7BD8775A2762F2F40079E8D1 /* CrashReporter */; };
 		7BEA779A274BAB7600BF95CA /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA7799274BAB7600BF95CA /* MissionView.swift */; };
+		7BF87AF1279D4D310081DF2A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BF87AF0279D4D310081DF2A /* GoogleService-Info.plist */; };
+		7BF87B6B27A0FAD70081DF2A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF87B6A27A0FAD60081DF2A /* Constants.swift */; };
+		7BF87B6D27A0FE680081DF2A /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF87B6C27A0FE680081DF2A /* Optional.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,7 +110,11 @@
 		63A6A30626A7FD830092612F /* SharedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedViewController.swift; sourceTree = "<group>"; };
 		63A6A30926A801D10092612F /* AddMissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMissionView.swift; sourceTree = "<group>"; };
 		63A6A30D26A8050E0092612F /* PresentationLifeCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationLifeCycle.swift; sourceTree = "<group>"; };
+		7B3D00992793AC3B00DE52BA /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		7B654921275EC37200DEE784 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		7B73C810278EB9EB00231F1E /* beta.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = beta.xcconfig; sourceTree = "<group>"; };
+		7B73C811278EB9EB00231F1E /* debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = debug.xcconfig; sourceTree = "<group>"; };
+		7B73C812278EB9EB00231F1E /* appstore.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = appstore.xcconfig; sourceTree = "<group>"; };
 		7B8117AE276EADD700F5EAA7 /* ToggleButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButtonModifier.swift; sourceTree = "<group>"; };
 		7B8117B0276EB06100F5EAA7 /* KeyboardToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolbar.swift; sourceTree = "<group>"; };
 		7B93C32C274F6390005824FC /* AddObjectiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddObjectiveView.swift; sourceTree = "<group>"; };
@@ -126,8 +137,10 @@
 		7BAC2AD7274B7BC600C174BF /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		7BAC2AD9274B7DEE00C174BF /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
 		7BAC2ADB274B905400C174BF /* MissionListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionListItemView.swift; sourceTree = "<group>"; };
-		7BD877542761A5070079E8D1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7BEA7799274BAB7600BF95CA /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
+		7BF87AF0279D4D310081DF2A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7BF87B6A27A0FAD60081DF2A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7BF87B6C27A0FE680081DF2A /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BD877582762E7CB0079E8D1 /* MatomoTracker in Frameworks */,
+				7B3D00982793AB4F00DE52BA /* FirebaseAuth in Frameworks */,
 				7BD8775B2762F2F40079E8D1 /* CrashReporter in Frameworks */,
 				63A6A2E426A7C0630092612F /* napkin in Frameworks */,
 				63A6A2E926A7D05E0092612F /* CloudKit.framework in Frameworks */,
@@ -168,6 +182,7 @@
 				63A6A2D326A7C0180092612F /* MissionsUITests */,
 				63A6A2AD26A7C0180092612F /* Products */,
 				63A6A2E726A7D05E0092612F /* Frameworks */,
+				7BF87AED279CF7350081DF2A /* Configurations */,
 			);
 			sourceTree = "<group>";
 		};
@@ -184,12 +199,13 @@
 		63A6A2AE26A7C0180092612F /* Missions */ = {
 			isa = PBXGroup;
 			children = (
+				63A6A2F526A7E5740092612F /* App Start */,
 				7BAC2ABC27486BAD00C174BF /* Shared */,
 				63A6A2EA26A7E3E80092612F /* Mission List */,
 				63A6A2FB26A7F3320092612F /* Add Mission */,
 				63A6A2BB26A7C0180092612F /* Assets.xcassets */,
 				63A6A2C026A7C0180092612F /* Info.plist */,
-				7BD877542761A5070079E8D1 /* LaunchScreen.storyboard */,
+				7BF87AF0279D4D310081DF2A /* GoogleService-Info.plist */,
 				63A6A2E626A7CFBD0092612F /* Missions.entitlements */,
 				63A6A2B826A7C0180092612F /* Missions.xcdatamodeld */,
 			);
@@ -301,14 +317,15 @@
 		7BAC2ABC27486BAD00C174BF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				63A6A2F526A7E5740092612F /* App Start */,
 				7BAC2ACD274B1DCC00C174BF /* Views */,
 				7BAC2ABD274875ED00C174BF /* Models */,
 				7BAC2AC82748853100C174BF /* Extensions */,
 				7BAC2ABA27486BA700C174BF /* MissionsManager.swift */,
 				7BAC2AC627487C2A00C174BF /* DatabaseService.swift */,
 				7BAC2AD5274B2D0700C174BF /* MissionsPersistentContainer.swift */,
+				7B3D00992793AC3B00DE52BA /* AuthenticationManager.swift */,
 				7BAC2AD9274B7DEE00C174BF /* ErrorHandling.swift */,
+				7BF87B6A27A0FAD60081DF2A /* Constants.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -329,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				7BAC2AD0274B1E4D00C174BF /* Image.swift */,
+				7BF87B6C27A0FE680081DF2A /* Optional.swift */,
 				7BAC2AC92748853F00C174BF /* NSManagedObject.swift */,
 			);
 			path = Extensions;
@@ -344,6 +362,16 @@
 				7B8117B0276EB06100F5EAA7 /* KeyboardToolbar.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7BF87AED279CF7350081DF2A /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				7B73C812278EB9EB00231F1E /* appstore.xcconfig */,
+				7B73C810278EB9EB00231F1E /* beta.xcconfig */,
+				7B73C811278EB9EB00231F1E /* debug.xcconfig */,
+			);
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,6 +395,7 @@
 				7BD877572762E7CB0079E8D1 /* MatomoTracker */,
 				7BD8775A2762F2F40079E8D1 /* CrashReporter */,
 				7B2465A8276F4B4400CD7D4C /* SFSymbols */,
+				7B3D00972793AB4F00DE52BA /* FirebaseAuth */,
 			);
 			productName = Missions;
 			productReference = 63A6A2AC26A7C0180092612F /* Missions.app */;
@@ -444,6 +473,7 @@
 				7BD877562762E7CB0079E8D1 /* XCRemoteSwiftPackageReference "matomo-sdk-ios" */,
 				7BD877592762F2F40079E8D1 /* XCRemoteSwiftPackageReference "plcrashreporter" */,
 				7B2465A7276F4B4400CD7D4C /* XCRemoteSwiftPackageReference "SFSymbols" */,
+				7B3D00962793AB4F00DE52BA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 63A6A2AD26A7C0180092612F /* Products */;
 			projectDirPath = "";
@@ -461,8 +491,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BD877552761A5070079E8D1 /* LaunchScreen.storyboard in Resources */,
+				7B73C814278EB9EB00231F1E /* debug.xcconfig in Resources */,
+				7BF87AF1279D4D310081DF2A /* GoogleService-Info.plist in Resources */,
+				7B73C815278EB9EB00231F1E /* appstore.xcconfig in Resources */,
 				63A6A2BC26A7C0180092612F /* Assets.xcassets in Resources */,
+				7B73C813278EB9EB00231F1E /* beta.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,11 +531,13 @@
 				7BAC2ADC274B905400C174BF /* MissionListItemView.swift in Sources */,
 				63A6A2EF26A7E3FF0092612F /* MissionListRouter.swift in Sources */,
 				7B93C339275373A3005824FC /* MissionObjectiveListItemView.swift in Sources */,
+				7B3D009A2793AC3B00DE52BA /* AuthenticationManager.swift in Sources */,
 				63A6A2BA26A7C0180092612F /* Missions.xcdatamodeld in Sources */,
 				63A6A30326A7F34E0092612F /* AddMissionInteractor.swift in Sources */,
 				7BAC2AD8274B7BC600C174BF /* Errors.swift in Sources */,
 				7BAC2ADA274B7DEE00C174BF /* ErrorHandling.swift in Sources */,
 				63A6A30A26A801D10092612F /* AddMissionView.swift in Sources */,
+				7BF87B6D27A0FE680081DF2A /* Optional.swift in Sources */,
 				63A6A2F126A7E3FF0092612F /* MissionListBuilder.swift in Sources */,
 				63A6A2B226A7C0180092612F /* SceneDelegate.swift in Sources */,
 				63A6A30026A7F34E0092612F /* AddMissionRouter.swift in Sources */,
@@ -518,6 +553,7 @@
 				63A6A30226A7F34E0092612F /* AddMissionBuilder.swift in Sources */,
 				7BAC2AC727487C2A00C174BF /* DatabaseService.swift in Sources */,
 				7BAC2AD6274B2D0700C174BF /* MissionsPersistentContainer.swift in Sources */,
+				7BF87B6B27A0FAD70081DF2A /* Constants.swift in Sources */,
 				63A6A30E26A8050E0092612F /* PresentationLifeCycle.swift in Sources */,
 				7BEA779A274BAB7600BF95CA /* MissionView.swift in Sources */,
 				63A6A2F226A7E3FF0092612F /* MissionListInteractor.swift in Sources */,
@@ -564,9 +600,9 @@
 /* Begin XCBuildConfiguration section */
 		63A6A2D726A7C0180092612F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B73C811278EB9EB00231F1E /* debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				APP_DISPLAY_NAME = "Missions Debug";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -640,11 +676,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.IamGoodBad.Missions;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.IamGoodBad.Missions";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.IamGoodBad.Missions.debug";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -692,9 +728,9 @@
 		};
 		7BB6787E27546AC000C6F835 /* AppStore */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B73C812278EB9EB00231F1E /* appstore.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				APP_DISPLAY_NAME = Missions;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -762,11 +798,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.IamGoodBad.Missions;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.IamGoodBad.Missions";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = AppStore;
 		};
@@ -814,9 +850,9 @@
 		};
 		7BB6788A2754AE2B00C6F835 /* Beta */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B73C810278EB9EB00231F1E /* beta.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				APP_DISPLAY_NAME = "Missions β";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -884,11 +920,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.IamGoodBad.Missions;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.IamGoodBad.Missions";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.IamGoodBad.Missions.beta";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Beta;
 		};
@@ -996,6 +1032,14 @@
 				kind = branch;
 			};
 		};
+		7B3D00962793AB4F00DE52BA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 		7BD877562762E7CB0079E8D1 /* XCRemoteSwiftPackageReference "matomo-sdk-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/matomo-org/matomo-sdk-ios.git";
@@ -1024,6 +1068,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7B2465A7276F4B4400CD7D4C /* XCRemoteSwiftPackageReference "SFSymbols" */;
 			productName = SFSymbols;
+		};
+		7B3D00972793AB4F00DE52BA /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B3D00962793AB4F00DE52BA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 		7BD877572762E7CB0079E8D1 /* MatomoTracker */ = {
 			isa = XCSwiftPackageProductDependency;

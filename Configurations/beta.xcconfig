@@ -1,0 +1,3 @@
+// beta.xcconfig from https://nshipster.com/xcconfig/
+APP_DISPLAY_NAME = $(PRODUCT_NAME) β
+PRODUCT_BUNDLE_IDENTIFIER = com.IamGoodBad.Missions.beta

@@ -1,0 +1,3 @@
+// appstore.xcconfig from https://nshipster.com/xcconfig/
+APP_DISPLAY_NAME = $(PRODUCT_NAME)
+PRODUCT_BUNDLE_IDENTIFIER = com.IamGoodBad.Missions
