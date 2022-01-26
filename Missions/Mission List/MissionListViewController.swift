@@ -5,8 +5,9 @@
 //  Created by nonplus on 7/20/21.
 //
 
-import napkin
 import Combine
+import FirebaseAuth
+import napkin
 import SwiftUI
 
 protocol MissionListPresentableListener: AnyObject {
@@ -19,6 +20,8 @@ protocol MissionListPresentableListener: AnyObject {
     func onDeleteSubtask(uuid: UUID)
     func onUpdateMission(mission: Mission)
     func onSave()
+    func onSignIn()
+    func onSignOut()
 }
 
 final class MissionListViewController: UIHostingController<MissionListView>, MissionListPresentable, MissionListViewControllable {
@@ -28,7 +31,8 @@ final class MissionListViewController: UIHostingController<MissionListView>, Mis
     let startedMissions = PassthroughSubject<[Mission], Never>()
     let completeMissions = PassthroughSubject<[Mission], Never>()
     let removedMissions = PassthroughSubject<[Mission], Never>()
-    
+    let user = PassthroughSubject<User?, Never>()
+
     weak var listener: MissionListPresentableListener?
     
     private var cancellables: Set<AnyCancellable> = []
@@ -46,6 +50,8 @@ final class MissionListViewController: UIHostingController<MissionListView>, Mis
                 case .deleteMissionObjective(uuid: let uuid): self?.listener?.onDeleteMissionObjective(uuid: uuid)
                 case .deleteSubtask(uuid: let uuid): self?.listener?.onDeleteSubtask(uuid: uuid)
                 case .save: self?.listener?.onSave()
+                case .signIn: self?.listener?.onSignIn()
+                case .signOut: self?.listener?.onSignOut()
                 }
             }
             .store(in: &cancellables)
@@ -73,6 +79,11 @@ final class MissionListViewController: UIHostingController<MissionListView>, Mis
         removedMissions
             .receive(on: DispatchQueue.main)
             .assign(to: \.viewModel.removedMissions, on: rootView)
+            .store(in:&cancellables)
+        
+        user
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.viewModel.user, on: rootView)
             .store(in:&cancellables)
     }
     
