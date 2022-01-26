@@ -57,11 +57,12 @@
 		7BAC2AD8274B7BC600C174BF /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAC2AD7274B7BC600C174BF /* Errors.swift */; };
 		7BAC2ADA274B7DEE00C174BF /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAC2AD9274B7DEE00C174BF /* ErrorHandling.swift */; };
 		7BAC2ADC274B905400C174BF /* MissionListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAC2ADB274B905400C174BF /* MissionListItemView.swift */; };
-		7BD877552761A5070079E8D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BD877542761A5070079E8D1 /* LaunchScreen.storyboard */; };
 		7BD877582762E7CB0079E8D1 /* MatomoTracker in Frameworks */ = {isa = PBXBuildFile; productRef = 7BD877572762E7CB0079E8D1 /* MatomoTracker */; };
 		7BD8775B2762F2F40079E8D1 /* CrashReporter in Frameworks */ = {isa = PBXBuildFile; productRef = 7BD8775A2762F2F40079E8D1 /* CrashReporter */; };
 		7BEA779A274BAB7600BF95CA /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA7799274BAB7600BF95CA /* MissionView.swift */; };
 		7BF87AF1279D4D310081DF2A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BF87AF0279D4D310081DF2A /* GoogleService-Info.plist */; };
+		7BF87B6B27A0FAD70081DF2A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF87B6A27A0FAD60081DF2A /* Constants.swift */; };
+		7BF87B6D27A0FE680081DF2A /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF87B6C27A0FE680081DF2A /* Optional.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,9 +137,10 @@
 		7BAC2AD7274B7BC600C174BF /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		7BAC2AD9274B7DEE00C174BF /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
 		7BAC2ADB274B905400C174BF /* MissionListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionListItemView.swift; sourceTree = "<group>"; };
-		7BD877542761A5070079E8D1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7BEA7799274BAB7600BF95CA /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
 		7BF87AF0279D4D310081DF2A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7BF87B6A27A0FAD60081DF2A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7BF87B6C27A0FE680081DF2A /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,7 +206,6 @@
 				63A6A2BB26A7C0180092612F /* Assets.xcassets */,
 				63A6A2C026A7C0180092612F /* Info.plist */,
 				7BF87AF0279D4D310081DF2A /* GoogleService-Info.plist */,
-				7BD877542761A5070079E8D1 /* LaunchScreen.storyboard */,
 				63A6A2E626A7CFBD0092612F /* Missions.entitlements */,
 				63A6A2B826A7C0180092612F /* Missions.xcdatamodeld */,
 			);
@@ -324,6 +325,7 @@
 				7BAC2AD5274B2D0700C174BF /* MissionsPersistentContainer.swift */,
 				7B3D00992793AC3B00DE52BA /* AuthenticationManager.swift */,
 				7BAC2AD9274B7DEE00C174BF /* ErrorHandling.swift */,
+				7BF87B6A27A0FAD60081DF2A /* Constants.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -344,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				7BAC2AD0274B1E4D00C174BF /* Image.swift */,
+				7BF87B6C27A0FE680081DF2A /* Optional.swift */,
 				7BAC2AC92748853F00C174BF /* NSManagedObject.swift */,
 			);
 			path = Extensions;
@@ -491,7 +494,6 @@
 				7B73C814278EB9EB00231F1E /* debug.xcconfig in Resources */,
 				7BF87AF1279D4D310081DF2A /* GoogleService-Info.plist in Resources */,
 				7B73C815278EB9EB00231F1E /* appstore.xcconfig in Resources */,
-				7BD877552761A5070079E8D1 /* LaunchScreen.storyboard in Resources */,
 				63A6A2BC26A7C0180092612F /* Assets.xcassets in Resources */,
 				7B73C813278EB9EB00231F1E /* beta.xcconfig in Resources */,
 			);
@@ -535,6 +537,7 @@
 				7BAC2AD8274B7BC600C174BF /* Errors.swift in Sources */,
 				7BAC2ADA274B7DEE00C174BF /* ErrorHandling.swift in Sources */,
 				63A6A30A26A801D10092612F /* AddMissionView.swift in Sources */,
+				7BF87B6D27A0FE680081DF2A /* Optional.swift in Sources */,
 				63A6A2F126A7E3FF0092612F /* MissionListBuilder.swift in Sources */,
 				63A6A2B226A7C0180092612F /* SceneDelegate.swift in Sources */,
 				63A6A30026A7F34E0092612F /* AddMissionRouter.swift in Sources */,
@@ -550,6 +553,7 @@
 				63A6A30226A7F34E0092612F /* AddMissionBuilder.swift in Sources */,
 				7BAC2AC727487C2A00C174BF /* DatabaseService.swift in Sources */,
 				7BAC2AD6274B2D0700C174BF /* MissionsPersistentContainer.swift in Sources */,
+				7BF87B6B27A0FAD70081DF2A /* Constants.swift in Sources */,
 				63A6A30E26A8050E0092612F /* PresentationLifeCycle.swift in Sources */,
 				7BEA779A274BAB7600BF95CA /* MissionView.swift in Sources */,
 				63A6A2F226A7E3FF0092612F /* MissionListInteractor.swift in Sources */,
@@ -674,7 +678,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.IamGoodBad.Missions";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.IamGoodBad.Missions.debug";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

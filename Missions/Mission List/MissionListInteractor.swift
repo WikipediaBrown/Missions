@@ -5,9 +5,9 @@
 //  Created by nonplus on 7/20/21.
 //
 
-import napkin
 import Combine
-import Foundation
+import FirebaseAuth
+import napkin
 
 protocol MissionListRouting: LaunchRouting {
     func routeToAddMission(with listener: AddMissionListener)
@@ -21,6 +21,7 @@ protocol MissionListPresentable: Presentable, ErrorHandling {
     var startedMissions: PassthroughSubject<[Mission], Never> { get }
     var completeMissions: PassthroughSubject<[Mission], Never> { get }
     var removedMissions: PassthroughSubject<[Mission], Never> { get }
+    var user: PassthroughSubject<User?, Never> { get }
 }
 
 protocol MissionListListener: AnyObject {
@@ -31,21 +32,33 @@ final class MissionListInteractor: PresentableInteractor<MissionListPresentable>
     weak var router: MissionListRouting?
     weak var listener: MissionListListener?
     
+    private let authenticationManager: AuthenticationManaging
     private let missionManager: MissionsManaging
-    
+
     private var cancellables: Set<AnyCancellable> = []
 
-    init(presenter: MissionListPresentable, missionManager: MissionsManaging) {
+    init(presenter: MissionListPresentable, authenticationManager: AuthenticationManaging, missionManager: MissionsManaging) {
+        self.authenticationManager = authenticationManager
         self.missionManager = missionManager
         super.init(presenter: presenter)
         presenter.listener = self
         
-        self.setupMissionLists(missionManager: missionManager)
+//        self.setupMissionLists(missionManager: missionManager)
     }
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        // TODO: Implement business logic here.
+        
+        setupMissionLists(missionManager: missionManager)
+        
+        authenticationManager
+            .userSubject
+            .catch { [weak self] error -> Just<User?> in
+                self?.presenter.presentError(error: error)
+                return Just(nil)
+            }
+            .subscribe(presenter.user)
+            .store(in: &cancellables)
     }
 
     override func willResignActive() {
@@ -172,5 +185,15 @@ extension MissionListInteractor: MissionListPresentableListener {
         } catch let error {
             presenter.presentError(error: error)
         }
+    }
+    
+    // MARK: - Authentication
+    
+    func onSignIn() {
+        authenticationManager.signIn()
+    }
+    
+    func onSignOut() {
+        authenticationManager.signOut()
     }
 }

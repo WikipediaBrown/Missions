@@ -6,13 +6,15 @@
 //
 
 import Combine
+import FirebaseAuth
 import SwiftUI
 import SFSymbols
 
 struct MissionListView: View {
-        
+    
     @ObservedObject var viewModel: ViewModel = ViewModel()
     class ViewModel: ObservableObject {
+        @Published var user: User? = nil
         @Published var currentMissions: [Mission] = []
         @Published var backlogMissions: [Mission] = []
         @Published var startedMissions: [Mission] = []
@@ -29,90 +31,96 @@ struct MissionListView: View {
     }
     
     var body: some View {
-        NavigationView(content: {
-            List {
-                if viewModel.currentMissions.isEmpty == false, let first = viewModel.currentMissions.first {
-                    section(
-                        missions: viewModel.currentMissions,
-                        headerText: "Current Missions",
-                        headerColor: .green,
-                        footerText: "Last updated on \(first.lastUpdatedDate.formatted())"
-                    )
-                }
-                if viewModel.backlogMissions.isEmpty == false, let first = viewModel.backlogMissions.first {
-                    section(
-                        missions: viewModel.backlogMissions,
-                        headerText: "Mission Backlog",
-                        headerColor: .gray,
-                        footerText: "Last updated on \(first.lastUpdatedDate.formatted())"
-                    )
-                }
-                if viewModel.startedMissions.isEmpty == false, let first = viewModel.startedMissions.first {
-                    section(
-                        missions: viewModel.startedMissions,
-                        headerText: "Pending Complete",
-                        headerColor: .yellow,
-                        footerText: "Last updated on \(first.lastUpdatedDate.formatted())"
-                    )
-                }
-                if viewModel.completeMissions.isEmpty == false, let first = viewModel.completeMissions.first {
-                    section(
-                        missions: viewModel.completeMissions,
-                        headerText: "Mission Complete",
-                        headerColor: .blue,
-                        footerText: "Last updated on \(first.lastUpdatedDate.formatted())"
-                    )
-                }
-                if viewModel.removedMissions.isEmpty == false {
-                    section(
-                        missions: viewModel.removedMissions,
-                        headerText: "Deleted Missions",
-                        headerColor: .red,
-                        footerText: "These missions were recently deleted. Missions permanently deleted after 30 days."
-                    )
-                }
-                if allEmpty {
-                    Button(
-                        action: {
-                            self.tapSubject.send(.addMission)
-                        },
-                        label: {
-//                            Image(uiImage: .plus.withRenderingMode(.alwaysTemplate))
-                            Image(systemName: .plusApp)
-                                .resizable()
-                                .scaledToFit()
-                                .aspectRatio(contentMode: .fit)
-                                .foregroundColor(.primary)
-                            Text("Add a Mission")
-                                .foregroundColor(.primary)
-                                .fontWeight(.black)
-                                .font(.title3)
-                        }
-                    )
-                        .padding()
-                } else {
-                    Section(footer: MadeInCascadiaView(), content: {})
-                }
-            }
-            .listStyle(InsetGroupedListStyle())
-            .navigationBarTitleDisplayMode(.large)
-            .navigationTitle("Missions")
-            .navigationBarItems(
-                trailing:
-                    Button(
-                        action: {
-                            tapSubject.send(.addMission)
-                        },
-                        label: {
-                            if !allEmpty {
-                            Image(systemName: "plus.square.on.square")
-                                .foregroundColor(.primary)
-                                .font(.title)
+        if viewModel.user.exists {
+            
+            
+            NavigationView(content: {
+                List {
+                    if viewModel.currentMissions.isEmpty == false, let first = viewModel.currentMissions.first {
+                        section(
+                            missions: viewModel.currentMissions,
+                            headerText: "Current Missions",
+                            headerColor: .green,
+                            footerText: "Last updated on \(first.lastUpdatedDate.formatted())"
+                        )
+                    }
+                    if viewModel.backlogMissions.isEmpty == false, let first = viewModel.backlogMissions.first {
+                        section(
+                            missions: viewModel.backlogMissions,
+                            headerText: "Mission Backlog",
+                            headerColor: .gray,
+                            footerText: "Last updated on \(first.lastUpdatedDate.formatted())"
+                        )
+                    }
+                    if viewModel.startedMissions.isEmpty == false, let first = viewModel.startedMissions.first {
+                        section(
+                            missions: viewModel.startedMissions,
+                            headerText: "Pending Complete",
+                            headerColor: .yellow,
+                            footerText: "Last updated on \(first.lastUpdatedDate.formatted())"
+                        )
+                    }
+                    if viewModel.completeMissions.isEmpty == false, let first = viewModel.completeMissions.first {
+                        section(
+                            missions: viewModel.completeMissions,
+                            headerText: "Mission Complete",
+                            headerColor: .blue,
+                            footerText: "Last updated on \(first.lastUpdatedDate.formatted())"
+                        )
+                    }
+                    if viewModel.removedMissions.isEmpty == false {
+                        section(
+                            missions: viewModel.removedMissions,
+                            headerText: "Deleted Missions",
+                            headerColor: .red,
+                            footerText: "These missions were recently deleted. Missions permanently deleted after 30 days."
+                        )
+                    }
+                    if allEmpty {
+                        Button(
+                            action: {
+                                self.tapSubject.send(.addMission)
+                            },
+                            label: {
+                                Image(systemName: .plusApp)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .aspectRatio(contentMode: .fit)
+                                    .foregroundColor(.primary)
+                                Text("Add a Mission")
+                                    .foregroundColor(.primary)
+                                    .fontWeight(.black)
+                                    .font(.title3)
                             }
-                        }
-                    )
-            )
-        })
+                        )
+                            .padding()
+                    } else {
+                        Section(footer: MadeInCascadiaView(), content: {})
+                    }
+                }
+                .listStyle(InsetGroupedListStyle())
+                .navigationBarTitleDisplayMode(.large)
+                .navigationTitle("Missions")
+                .navigationBarItems(
+                    trailing:
+                        Button(
+                            action: {
+                                tapSubject.send(.addMission)
+                            },
+                            label: {
+                                if !allEmpty {
+                                    Image(systemName: "plus.square.on.square")
+                                        .foregroundColor(.primary)
+                                        .font(.title)
+                                }
+                            }
+                        )
+                )
+            })
+        } else {
+            Image("Logo")
+            Text("Missions")
+        }
     }
     
     // MARK: - Private Methods
@@ -151,7 +159,7 @@ struct MissionListView: View {
     // MARK: - Taps
     
     let tapSubject: PassthroughSubject<Taps, Never> = PassthroughSubject()
-
+    
     enum Taps {
         case addMission
         case deleteMission(uuid: UUID)
@@ -159,6 +167,8 @@ struct MissionListView: View {
         case deleteSubtask(uuid: UUID)
         case update(mission: Mission)
         case save
+        case signIn
+        case signOut
     }
     
 }

@@ -8,10 +8,12 @@
 import napkin
 
 protocol MissionListDependency: Dependency {
+    var authenticationManager: AuthenticationManaging { get }
     var missionManager: MissionsManaging { get }
 }
 
 final class MissionListComponent: Component<MissionListDependency>, AddMissionDependency {
+    var authenticationManager: AuthenticationManaging { dependency.authenticationManager }
     var missionManager: MissionsManaging { dependency.missionManager }
 }
 
@@ -30,7 +32,9 @@ final class MissionListBuilder: Builder<MissionListDependency>, MissionListBuild
     func build(withListener listener: MissionListListener) -> MissionListRouting {
         let component = MissionListComponent(dependency: dependency)
         let viewController = MissionListViewController()
-        let interactor = MissionListInteractor(presenter: viewController, missionManager: component.missionManager)
+        let interactor = MissionListInteractor(presenter: viewController,
+                                               authenticationManager: component.authenticationManager,
+                                               missionManager: component.missionManager)
         interactor.listener = listener
         return MissionListRouter(interactor: interactor, viewController: viewController, component: component)
     }
