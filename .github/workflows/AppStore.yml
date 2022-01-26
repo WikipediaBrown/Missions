@@ -1,11 +1,11 @@
-name: CI
+name: Release To AppStore
 on:
   push:
     branches:
     - main
 jobs:
   release:
-    name: Release To AppStore
+    name: Use Bundler & Fastlane to Deploy to Appstore
     runs-on: macOS-latest
     environment: Production
     # strategy:
@@ -28,9 +28,5 @@ jobs:
         uses: actions/checkout@v1
       - name: Bundle Install
         run: bundle install
-      # - name: Unit Tests
-      #   run: bundle exec fastlane unit_test
-      # - name: UI Tests
-      #   run: bundle exec fastlane ui_test
       - name: Release To AppStore
         run: bundle exec fastlane release_to_appstore
